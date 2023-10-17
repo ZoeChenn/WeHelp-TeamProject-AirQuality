@@ -1,0 +1,332 @@
+* {
+    margin: 0px;
+}
+
+header {
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background-color: #ffffff; 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+    z-index: 1000; 
+    .head{
+        display: flex;
+        width: 1200px;
+        justify-content: space-between;
+        align-items: center;
+        a{
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .left {
+                padding: 10px;
+                flex: none; 
+                font-family: Noto Sans TC;
+                font-size: 30px;
+                font-weight: 700;
+                text-align: center;
+                color: #000000;
+            }
+        }
+        .right {
+            display: flex; 
+            justify-content: space-evenly;
+            align-items: center;
+            height:34px;
+                .item{
+                flex: none; 
+                font-family: Noto Sans TC;
+                //justify-content: space-between;
+                padding:10px;
+                align-items: center;
+                font-size: 16px;
+                color: #189ad3;
+            }
+        }
+    }
+}
+
+section {      
+    display: flex; 
+    margin-top: 90px;
+    .bread-bg {
+        height: 52px;
+        width: 100%;
+        background-color:#f0f5f9 ;
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+    }
+    .bread {
+        display: flex;
+        width: 1200px;
+        align-items: center;
+        justify-content: start; 
+        .path {
+            span{
+                color: #666;
+                font-family: Noto Sans TC;
+                font-size: 14px;
+                width: 100%;
+                padding: 2px;
+            }
+        }
+    }
+}
+
+main{       
+    .Map{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .clearFix{
+            width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            .inputField{
+                margin: 30px 0px;
+                display: inline-block;
+                flex: 1;
+                label {
+                    display: block;
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                }
+                select {
+                    width: 80%;
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                }
+            }
+            .inputFieldFix {
+                text-align: center;
+                display: flex;
+                align-items: center;
+                .seachField {
+                    background-color: #189ad3;
+                    color: white;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-weight: bold;
+                }
+                .seachField:hover {
+                    background-color: #41b8eb;
+                }
+            }
+        }
+    }
+    .lineContainer{
+        display: flex;
+        justify-content: center;
+        .line {
+            border: 1px solid #E8E8E8;
+            border-top: 0px;
+            width: 1200px;
+        }
+    }
+    .article{
+        .station{
+            margin: 30px 0px;
+            display: flex;
+            justify-content: center;
+            .stationTitle{
+                width: 1200px;
+                display: flex;
+                .site{
+                    padding-left: 10px ;
+                    p{
+                        color: #666;
+                    }
+                }
+            }
+        }
+        .AQTitle{
+            display: flex;
+            justify-content: center;
+            h4{
+                width: 1200px;
+            }
+        }
+        .AQBoxs{ 
+            .AQI{
+                display: flex;
+                justify-content: center;
+                .AA{
+                    display: flex;
+                    justify-content: start;
+                    width: 1200px;
+                    .AQIbox {
+                        width: 100%;
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: self-start;
+                        margin: 10px;
+                        padding: 20px;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                        h4{
+                            font-weight: bold;
+                        }
+                        p{
+                            margin: 10px 0;
+                            text-align: start;
+                            font-size: 14px;
+                            color: #666;
+                        }
+                        .AQIcondition{
+                            position: absolute;
+                            right: 20%;
+                            top:32%;
+                        }
+                        .num{
+                            position: absolute;
+                            right: 10%;
+                            top:25%;
+                            font-size: 28px;
+                            font-weight: bold;
+                            color: #189ad3;
+                        }
+                    }
+                }
+            }
+            .clearfix{
+                display: flex;
+                justify-content: center; 
+                .BB{
+                    display: flex;
+                    width: 1200px;
+                    justify-content: space-between; 
+                    flex-wrap: wrap;
+                    .AQBox {
+                        position: relative;
+                        width: 25%;
+                        flex-direction: column;
+                        align-items: self-start;
+                        margin: 10px;
+                        padding: 20px;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                        .AQIcondition{
+                            margin: 10px 0;
+                            text-align: start;
+                            font-size: 14px;
+                            color: #666;
+                        }
+                        p{
+                            margin: 10px 0;
+                            text-align: start;
+                            font-size: 14px;
+                            color: #666;
+                        }
+                        h4{
+                            font-weight: bold;
+                        }
+                        .num{
+                            position: absolute;
+                            top:23%;
+                            right: 10%;
+                            font-size: 28px;
+                            font-weight: bold;
+                            color: #189ad3;
+                        }
+                    }
+                    .Empty{
+                        width: 25%;
+                        flex-direction: column;
+                        align-items: self-start;
+                        margin: 10px;
+                        padding: 20px;
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+        .AQITable{
+            display: flex;
+            justify-content: center;
+            .CC{
+                width: 1200px;
+                text-align: center;
+                margin: 30px 0px;
+                .MyCaption{
+                    width: 100%;
+                    padding: 20px 0px;
+                    text-align: center;
+                    font-weight: bold;
+                    color: #000;
+                    background-color: #eeeced;
+                    border: 2px solid #FFF;
+                }
+                .AQIlegend{
+                    table{
+                        tbody{
+                            tr{
+                                td{
+                                    width: 220px;
+                                    text-align: left;
+                                    span{
+                                        
+                                        display: block;
+                                        padding:20px 10px;
+                                        font-size: 1rem;
+                                        color: #000;
+                                    }
+                                    .bor-top-green{
+                                        border-top: 0.5rem solid #009865;
+                                        background-color: #e5f4ef;
+                                    }
+                                    .bor-top-yellow{
+                                        border-top: 0.5rem solid #fffb26;
+                                        background-color: #ffffea;
+                                    }
+                                    .bor-top-orange{
+                                        border-top: 0.5rem solid #ff9734;
+                                        background-color: #fef4ea;
+                                    }
+                                    .bor-top-red{
+                                        border-top: 0.5rem solid #ca0034;
+                                        background-color: #fae5ea;
+                                    }
+                                    .bor-top-purple{
+                                        border-top: 0.5rem solid #670099;
+                                        background-color: #f0e5f5;
+                                    }
+                                    .bor-top-brown{
+                                        border-top: 0.5rem solid #7e0123;
+                                        background-color: #f1e5e9;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+footer{
+    width: 100%;
+    height: 104px;
+    background-color: #f0f5f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .foot{
+        color:#189ad3 ;
+        font-family: Noto Sans TC;
+        font-size: 16px;
+        line-height: 14px;
+    }
+}

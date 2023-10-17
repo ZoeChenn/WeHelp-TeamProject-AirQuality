@@ -1,0 +1,315 @@
+* {
+  margin: 0px;
+}
+
+header {
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+header .head {
+  display: flex;
+  width: 1200px;
+  justify-content: space-between;
+  align-items: center;
+}
+header .head a {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .head a .left {
+  padding: 10px;
+  flex: none;
+  font-family: Noto Sans TC;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  color: #000000;
+}
+header .head .right {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 34px;
+}
+header .head .right .item {
+  flex: none;
+  font-family: Noto Sans TC;
+  padding: 10px;
+  align-items: center;
+  font-size: 16px;
+  color: #189ad3;
+}
+
+section {
+  display: flex;
+  margin-top: 90px;
+}
+section .bread-bg {
+  height: 52px;
+  width: 100%;
+  background-color: #f0f5f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .bread {
+  display: flex;
+  width: 1200px;
+  align-items: center;
+  justify-content: start;
+}
+section .bread .path span {
+  color: #666;
+  font-family: Noto Sans TC;
+  font-size: 14px;
+  width: 100%;
+  padding: 2px;
+}
+
+main .Map {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .Map .clearFix {
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+}
+main .Map .clearFix .inputField {
+  margin: 30px 0px;
+  display: inline-block;
+  flex: 1;
+}
+main .Map .clearFix .inputField label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+main .Map .clearFix .inputField select {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+main .Map .clearFix .inputFieldFix {
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+main .Map .clearFix .inputFieldFix .seachField {
+  background-color: #189ad3;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+main .Map .clearFix .inputFieldFix .seachField:hover {
+  background-color: #41b8eb;
+}
+main .lineContainer {
+  display: flex;
+  justify-content: center;
+}
+main .lineContainer .line {
+  border: 1px solid #E8E8E8;
+  border-top: 0px;
+  width: 1200px;
+}
+main .article .station {
+  margin: 30px 0px;
+  display: flex;
+  justify-content: center;
+}
+main .article .station .stationTitle {
+  width: 1200px;
+  display: flex;
+}
+main .article .station .stationTitle .site {
+  padding-left: 10px;
+}
+main .article .station .stationTitle .site p {
+  color: #666;
+}
+main .article .AQTitle {
+  display: flex;
+  justify-content: center;
+}
+main .article .AQTitle h4 {
+  width: 1200px;
+}
+main .article .AQBoxs .AQI {
+  display: flex;
+  justify-content: center;
+}
+main .article .AQBoxs .AQI .AA {
+  display: flex;
+  justify-content: start;
+  width: 1200px;
+}
+main .article .AQBoxs .AQI .AA .AQIbox {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+main .article .AQBoxs .AQI .AA .AQIbox h4 {
+  font-weight: bold;
+}
+main .article .AQBoxs .AQI .AA .AQIbox p {
+  margin: 10px 0;
+  text-align: start;
+  font-size: 14px;
+  color: #666;
+}
+main .article .AQBoxs .AQI .AA .AQIbox .AQIcondition {
+  position: absolute;
+  right: 20%;
+  top: 32%;
+}
+main .article .AQBoxs .AQI .AA .AQIbox .num {
+  position: absolute;
+  right: 10%;
+  top: 25%;
+  font-size: 28px;
+  font-weight: bold;
+  color: #189ad3;
+}
+main .article .AQBoxs .clearfix {
+  display: flex;
+  justify-content: center;
+}
+main .article .AQBoxs .clearfix .BB {
+  display: flex;
+  width: 1200px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+main .article .AQBoxs .clearfix .BB .AQBox {
+  position: relative;
+  width: 25%;
+  flex-direction: column;
+  align-items: self-start;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+main .article .AQBoxs .clearfix .BB .AQBox .AQIcondition {
+  margin: 10px 0;
+  text-align: start;
+  font-size: 14px;
+  color: #666;
+}
+main .article .AQBoxs .clearfix .BB .AQBox p {
+  margin: 10px 0;
+  text-align: start;
+  font-size: 14px;
+  color: #666;
+}
+main .article .AQBoxs .clearfix .BB .AQBox h4 {
+  font-weight: bold;
+}
+main .article .AQBoxs .clearfix .BB .AQBox .num {
+  position: absolute;
+  top: 23%;
+  right: 10%;
+  font-size: 28px;
+  font-weight: bold;
+  color: #189ad3;
+}
+main .article .AQBoxs .clearfix .BB .Empty {
+  width: 25%;
+  flex-direction: column;
+  align-items: self-start;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 5px;
+}
+main .article .AQITable {
+  display: flex;
+  justify-content: center;
+}
+main .article .AQITable .CC {
+  width: 1200px;
+  text-align: center;
+  margin: 30px 0px;
+}
+main .article .AQITable .CC .MyCaption {
+  width: 100%;
+  padding: 20px 0px;
+  text-align: center;
+  font-weight: bold;
+  color: #000;
+  background-color: #eeeced;
+  border: 2px solid #FFF;
+}
+main .article .AQITable .CC .AQIlegend table tbody tr td {
+  width: 220px;
+  text-align: left;
+}
+main .article .AQITable .CC .AQIlegend table tbody tr td span {
+  display: block;
+  padding: 20px 10px;
+  font-size: 1rem;
+  color: #000;
+}
+main .article .AQITable .CC .AQIlegend table tbody tr td .bor-top-green {
+  border-top: 0.5rem solid #009865;
+  background-color: #e5f4ef;
+}
+main .article .AQITable .CC .AQIlegend table tbody tr td .bor-top-yellow {
+  border-top: 0.5rem solid #fffb26;
+  background-color: #ffffea;
+}
+main .article .AQITable .CC .AQIlegend table tbody tr td .bor-top-orange {
+  border-top: 0.5rem solid #ff9734;
+  background-color: #fef4ea;
+}
+main .article .AQITable .CC .AQIlegend table tbody tr td .bor-top-red {
+  border-top: 0.5rem solid #ca0034;
+  background-color: #fae5ea;
+}
+main .article .AQITable .CC .AQIlegend table tbody tr td .bor-top-purple {
+  border-top: 0.5rem solid #670099;
+  background-color: #f0e5f5;
+}
+main .article .AQITable .CC .AQIlegend table tbody tr td .bor-top-brown {
+  border-top: 0.5rem solid #7e0123;
+  background-color: #f1e5e9;
+}
+
+footer {
+  width: 100%;
+  height: 104px;
+  background-color: #f0f5f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .foot {
+  color: #189ad3;
+  font-family: Noto Sans TC;
+  font-size: 16px;
+  line-height: 14px;
+}/*# sourceMappingURL=all.css.map */
