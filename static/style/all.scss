@@ -27,7 +27,7 @@ header {
             .left {
                 padding: 10px;
                 flex: none; 
-                font-family: Noto Sans TC;
+                font-family: "Noto Sans TC", "Roboto", sans-serif;
                 font-size: 30px;
                 font-weight: 700;
                 text-align: center;
@@ -41,12 +41,15 @@ header {
             height:34px;
                 .item{
                 flex: none; 
-                font-family: Noto Sans TC;
+                font-family: "Noto Sans TC", "Roboto", sans-serif;
                 //justify-content: space-between;
                 padding:10px;
                 align-items: center;
                 font-size: 16px;
                 color: #189ad3;
+            }
+            .mobile-menu{
+                display: none;
             }
         }
     }
@@ -71,7 +74,7 @@ section {
         .path {
             span{
                 color: #666;
-                font-family: Noto Sans TC;
+                font-family: "Noto Sans TC", "Roboto", sans-serif;
                 font-size: 14px;
                 width: 100%;
                 padding: 2px;
@@ -80,7 +83,20 @@ section {
     }
 }
 
-main{       
+main{  
+    .dataHead{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .dataTitle{
+            width: 1200px;
+            margin: 30px 0px;
+            color:#189ad3 ;
+            font-family: "Noto Sans TC", "Roboto", sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+        }
+    }
     .Map{
         display: flex;
         align-items: center;
@@ -97,6 +113,7 @@ main{
                     display: block;
                     font-weight: bold;
                     margin-bottom: 5px;
+                    font-family: "Noto Sans TC", "Roboto", sans-serif;
                 }
                 select {
                     width: 80%;
@@ -108,7 +125,8 @@ main{
             .inputFieldFix {
                 text-align: center;
                 display: flex;
-                align-items: center;
+                align-self: self-end;
+                margin: 30px 0px;
                 .seachField {
                     background-color: #189ad3;
                     color: white;
@@ -117,6 +135,7 @@ main{
                     border-radius: 5px;
                     cursor: pointer;
                     font-weight: bold;
+                    font-family: "Noto Sans TC", "Roboto", sans-serif;
                 }
                 .seachField:hover {
                     background-color: #41b8eb;
@@ -140,11 +159,13 @@ main{
             justify-content: center;
             .stationTitle{
                 width: 1200px;
+                font-family: "Noto Sans TC", "Roboto", sans-serif;
                 display: flex;
                 .site{
                     padding-left: 10px ;
                     p{
                         color: #666;
+                        font-family: "Noto Sans TC", "Roboto", sans-serif;
                     }
                 }
             }
@@ -154,13 +175,14 @@ main{
             justify-content: center;
             h4{
                 width: 1200px;
+                font-family: "Noto Sans TC", "Roboto", sans-serif;
             }
         }
         .AQBoxs{ 
-            .AQI{
+            .AQIFlex{
                 display: flex;
                 justify-content: center;
-                .AA{
+                .AQI{
                     display: flex;
                     justify-content: start;
                     width: 1200px;
@@ -175,35 +197,68 @@ main{
                         border: 1px solid #ccc;
                         border-radius: 5px;
                         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                        font-family: "Noto Sans TC", "Roboto", sans-serif;
                         h4{
                             font-weight: bold;
+                            font-family: "Noto Sans TC", "Roboto", sans-serif;
                         }
-                        p{
+                        #POLLUTANT{
                             margin: 10px 0;
                             text-align: start;
                             font-size: 14px;
                             color: #666;
+                            font-family: "Noto Sans TC", "Roboto", sans-serif;
                         }
                         .AQIcondition{
                             position: absolute;
-                            right: 20%;
-                            top:32%;
+                            right: 15%;
+                            top:25%;
+                            margin: 10px 0;
+                            text-align: start;
+                            font-size: 16px;
+                            color: #000000;
+                            font-family: "Noto Sans TC", "Roboto", sans-serif;
                         }
                         .num{
                             position: absolute;
-                            right: 10%;
-                            top:25%;
+                            right: 8%;
+                            top:29%;
                             font-size: 28px;
                             font-weight: bold;
-                            color: #189ad3;
+                            color: #000000;
+                            font-family: "Noto Sans TC", "Roboto", sans-serif;
                         }
+                    }
+                    .bor-left-green{
+                        border-left: 0.5rem solid #009865;
+                        background-color: #e5f4ef;
+                    }
+                    .bor-left-yellow{
+                        border-left: 0.5rem solid #fffb26;
+                        background-color: #ffffea;
+                    }
+                    .bor-left-orange{
+                        border-left: 0.5rem solid #ff9734;
+                        background-color: #fef4ea;
+                    }
+                    .bor-left-red{
+                        border-left: 0.5rem solid #ca0034;
+                        background-color: #fae5ea;
+                    }
+                    .bor-left-purple{
+                        border-left: 0.5rem solid #670099;
+                        background-color: #f0e5f5;
+                    }
+                    .bor-left-brown{
+                        border-left: 0.5rem solid #7e0123;
+                        background-color: #f1e5e9;
                     }
                 }
             }
             .clearfix{
                 display: flex;
                 justify-content: center; 
-                .BB{
+                .clearfixBox{
                     display: flex;
                     width: 1200px;
                     justify-content: space-between; 
@@ -216,30 +271,35 @@ main{
                         margin: 10px;
                         padding: 20px;
                         border: 1px solid #ccc;
+                        font-family: "Noto Sans TC", "Roboto", sans-serif;
                         border-radius: 5px;
                         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
                         .AQIcondition{
                             margin: 10px 0;
                             text-align: start;
-                            font-size: 14px;
+                            font-size: 16px;
                             color: #666;
+                            font-family: "Noto Sans TC", "Roboto", sans-serif;
                         }
                         p{
                             margin: 10px 0;
                             text-align: start;
-                            font-size: 14px;
+                            font-size: 16px;
                             color: #666;
+                            font-family: "Noto Sans TC", "Roboto", sans-serif;
                         }
                         h4{
                             font-weight: bold;
+                            font-family: "Noto Sans TC", "Roboto", sans-serif;
                         }
                         .num{
                             position: absolute;
-                            top:23%;
+                            top:25%;
                             right: 10%;
                             font-size: 28px;
                             font-weight: bold;
-                            color: #189ad3;
+                            color: #000000;
+                            font-family: "Noto Sans TC", "Roboto", sans-serif;
                         }
                     }
                     .Empty{
@@ -256,13 +316,15 @@ main{
         .AQITable{
             display: flex;
             justify-content: center;
-            .CC{
+            .AQITableBox{
                 width: 1200px;
                 text-align: center;
                 margin: 30px 0px;
                 .MyCaption{
                     width: 100%;
                     padding: 20px 0px;
+                    font-family: "Noto Sans TC", "Roboto", sans-serif;
+                    font-weight: bold;
                     text-align: center;
                     font-weight: bold;
                     color: #000;
@@ -270,46 +332,51 @@ main{
                     border: 2px solid #FFF;
                 }
                 .AQIlegend{
-                    table{
-                        tbody{
-                            tr{
-                                td{
-                                    width: 220px;
-                                    text-align: left;
-                                    span{
-                                        
-                                        display: block;
-                                        padding:20px 10px;
-                                        font-size: 1rem;
-                                        color: #000;
-                                    }
-                                    .bor-top-green{
-                                        border-top: 0.5rem solid #009865;
-                                        background-color: #e5f4ef;
-                                    }
-                                    .bor-top-yellow{
-                                        border-top: 0.5rem solid #fffb26;
-                                        background-color: #ffffea;
-                                    }
-                                    .bor-top-orange{
-                                        border-top: 0.5rem solid #ff9734;
-                                        background-color: #fef4ea;
-                                    }
-                                    .bor-top-red{
-                                        border-top: 0.5rem solid #ca0034;
-                                        background-color: #fae5ea;
-                                    }
-                                    .bor-top-purple{
-                                        border-top: 0.5rem solid #670099;
-                                        background-color: #f0e5f5;
-                                    }
-                                    .bor-top-brown{
-                                        border-top: 0.5rem solid #7e0123;
-                                        background-color: #f1e5e9;
-                                    }
-                                }
-                            }
-                        }
+                    display: flex;
+                    justify-content: center;
+                    p{
+                        font-family: "Noto Sans TC", "Roboto", sans-serif;
+                        display: block;
+                        padding:5px 10px;
+                        font-size: 1rem;
+                        color: #000;
+                    }
+                    .bor-top-green{
+                        width: 100%;
+                        margin: 2px;
+                        border-top: 0.5rem solid #009865;
+                        background-color: #e5f4ef;
+                        
+                    }
+                    .bor-top-yellow{
+                        width: 100%;
+                        margin: 2px;
+                        border-top: 0.5rem solid #fffb26;
+                        background-color: #ffffea;
+                    }
+                    .bor-top-orange{
+                        width: 100%;
+                        margin: 2px;
+                        border-top: 0.5rem solid #ff9734;
+                        background-color: #fef4ea;
+                    }
+                    .bor-top-red{
+                        width: 100%;
+                        margin: 2px;
+                        border-top: 0.5rem solid #ca0034;
+                        background-color: #fae5ea;
+                    }
+                    .bor-top-purple{
+                        width: 100%;
+                        margin: 2px;
+                        border-top: 0.5rem solid #670099;
+                        background-color: #f0e5f5;
+                    }
+                    .bor-top-brown{
+                        width: 100%;
+                        margin: 2px;
+                        border-top: 0.5rem solid #7e0123;
+                        background-color: #f1e5e9;
                     }
                 }
             }
@@ -323,10 +390,131 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
     .foot{
         color:#189ad3 ;
-        font-family: Noto Sans TC;
-        font-size: 16px;
-        line-height: 14px;
+        font-family: "Noto Sans TC", "Roboto", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        span{
+            padding: 2px;
+            font-family: "Noto Sans TC", "Roboto", sans-serif;
+        }
+    }
+}
+
+@media(max-width:1200px){
+    header{
+        .head{
+            width: 95%;
+            .right{
+                .item{
+                    display: none;
+                }
+                .mobile-menu{
+                    display: block;
+                }
+            }
+        }
+    }
+    section{
+        .bread-bg{
+            .bread{
+                width: 90%;
+            }
+        }
+    }
+    main{
+        .dataHead{
+            .dataTitle{
+                width: 90%;
+            }
+        }
+        .lineContainer{
+            .line{
+                width: 90%;
+            }
+        }
+        .Map{
+            .clearFix{
+                width: 90%;
+                display: block;
+                
+                .inputField{
+                    margin:20px 5px ;
+                    width: calc(50% - 1rem);
+                    select {
+                        width: 100%;
+                    }
+                }
+                .inputFieldFix{
+                    justify-content: center;
+                    margin: 10px 0px;
+                }
+            }
+        }
+        .article{
+            .station{
+                .stationTitle{
+                    width: 90%;
+                }
+            }
+            .AQTitle{
+                h4{
+                    width: 90%;
+                }
+            }
+            .AQBoxs{
+                .AQIFlex{
+                    .AQI{
+                        width: 90%;
+                    }
+                    
+                }
+                .clearfix{
+                    .clearfixBox{
+                        width: 90%;
+                        .AQBox {
+                            width: calc(40% - 1rem);
+                        }
+                        .Empty{
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .AQITable{
+                .AQITableBox{
+                    width: 90%;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:600px){
+
+    main{
+        .Map{
+            .clearFix{
+                .inputField{
+                    margin:10px 5px ;
+                    width: 100%;
+                }
+
+            }
+        }
+        .article{
+
+            .AQBoxs{
+                .clearfix{
+                    .clearfixBox{
+                        .AQBox {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
     }
 }

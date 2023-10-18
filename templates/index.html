@@ -13,7 +13,7 @@
         <div class="head">
             <a href = "/">
                 <img src="../static/style/img/logo.png" alt="環境部">
-                <div class="left">空氣品質監測網</div>
+                <div class="left">| 空氣品質監測網</div>
             </a>
             <div class="right">
                 <div class="item">網站導覽</div>
@@ -22,6 +22,9 @@
                 <div class="item">空品預報</div>
                 <div class="item">作業規範</div>
                 <div class="item">空品科普</div>
+                <div class="mobile-menu">
+                    <img src="../static/style/img/more.png" width="25" height="25">
+                </div>
             </div>
         </div>
     </header>
@@ -43,42 +46,36 @@
     </section>
 
     <main>
+        <div class="dataHead">
+            <p class="dataTitle">中央監測資料</p>
+        </div>
+        <div class="lineContainer">
+            <hr class="line">
+        </div>
         <div class="Map">
             <div class="clearFix">
                 <div class="inputField">
                     <label for="ddl_Area">空品區：</label>
                     <select id="ddl_Area">
-                        <option>1111</option>
-                        <option>2222</option>
-                        <option>3333</option>
-                        <option>4444</option>
+                        <!-- <option>1111</option> -->
                     </select>
                 </div>
                 <div class="inputField">
                     <label for="ddl_County">縣市：</label>
                     <select id="ddl_County">
-                        <option>1111</option>
-                        <option>2222</option>
-                        <option>3333</option>
-                        <option>4444</option>
+                        <!-- <option>1111</option> -->
                     </select>
                 </div>
                 <div class="inputField">
                     <label for="ddl_Site">測站名稱：</label>
                     <select id="ddl_Site">
-                        <option>1111</option>
-                        <option>2222</option>
-                        <option>3333</option>
-                        <option>4444</option>
+                        <!-- <option>1111</option> -->
                     </select>
                 </div>
                 <div class="inputField">
                     <label for="ddl_Time">時間：</label>
                     <select id="ddl_Time">
-                        <option>1111</option>
-                        <option>2222</option>
-                        <option>3333</option>
-                        <option>4444</option>
+                        <!-- <option>1111</option> -->
                     </select>
                 </div>
                 <div class="inputFieldFix">
@@ -86,7 +83,6 @@
                 </div>
             </div>
         </div>
-
         <div class="lineContainer">
             <hr class="line">
         </div>
@@ -104,97 +100,122 @@
                 <h4>監測數值</h4>
             </div>
             <div class="AQBoxs">
-                <div class="AQI">
-                    <div class="AA">
+                <div class="AQIFlex">
+                    <div class="AQI">
                         <div class="AQIbox">
                             <h4>空氣品質指標 AQI</h4>
                             <p id="POLLUTANT">指標污染物 :  臭氧八小時</p>
-                            <p class="AQIcondition">對敏感族群不健康</p>
-                            <p class="num" id="AQI">112</p>
+                            <p class="AQIcondition"></p>
+                            <p class="num" id="AQI"></p>
                         </div>
                     </div>
                 </div>
                 <div class="clearfix">
-                    <div class="BB">
+                    <div class="clearfixBox">
                         <div class="AQBox">
                             <h4>細懸浮微粒  PM<sub>2.5</sub></h4>
                             <p>小時移動平均(μg/m<sup>3</sup>)</p>
-                            <p class="num" id="AVPM25">22.2</p>
+                            <p class="num" id="AVPM25"></p>
                         </div>
                         <div class="AQBox">
                             <h4>懸浮微粒 PM<sub>10</sub></h4>
                             <p>小時移動平均(μg/m<sup>3</sup>)</p>
-                            <p class="num" id="AVPM10">35</p>
+                            <p class="num" id="AVPM10"></p>
                         </div>
                         <div class="AQBox">
                             <h4>臭氧 O<sub>3</sub></h4>
                             <p>8小時移動平均(ppb)</p>
-                            <p class="num" id="AVO3">69</p>
+                            <p class="num" id="AVO3"></p>
                         </div>
                         <div class="AQBox">
                             <h4>一氧化碳 CO</h4>
                             <p>8小時移動平均(ppm)</p>
-                            <p class="num" id="AVCO">0.30</p>
+                            <p class="num" id="AVCO"></p>
                         </div>
                         <div class="AQBox">
                             <h4>二氧化硫 SO<sub>2</sub></h4>
                             <p>小時濃度值(ppb)</p>
-                            <p class="num" id="SO2">1.4</p>
+                            <p class="num" id="SO2"></p>
                         </div>
                         <div class="AQBox">
                             <h4>二氧化氮 NO<sub>2</sub></h4>
                             <p>小時濃度值(ppb)</p>
-                            <p class="num" id="NO2">3</p>
+                            <p class="num" id="NO2"></p>
                         </div>
                         <div class="AQBox">
                             <h4>細懸浮微粒 PM<sub>2.5</sub></h4>
                             <p>小時濃度值(μg/m<sup>3</sup>)</p>
-                            <p class="num" id="PM25">22</p>
+                            <p class="num" id="PM25"></p>
                         </div>
                         <div class="AQBox">
                             <h4>懸浮微粒 PM<sub>10</sub></h4>
                             <p>小時濃度值(μg/m<sup>3</sup>)</p>
-                            <p class="num" id="PM10">35</p>
+                            <p class="num" id="PM10"></p>
                         </div>
                         <div class="AQBox">
                             <h4>臭氧 O<sub>3</sub></h4>
                             <p>小時濃度值(ppb)</p>
-                            <p class="num" id="O3">76</p>
+                            <p class="num" id="O3"></p>
                         </div>
                         <div class="AQBox">
                             <h4>一氧化碳 CO</h4>
                             <p>小時濃度值(ppm)</p>
-                            <p class="num" id="CO">0.26</p>
+                            <p class="num" id="CO"></p>
                         </div>
                         <div class="AQBox">
                             <h4>非甲烷碳氫化合物 NMHC</h4>
                             <p>小時濃度值(ppm)</p>
-                            <p class="num" id="NMHC">0.04</p>
+                            <p class="num" id="NMHC"></p>
                         </div>
                         <div class="AQBox">
                             <h4>風速 Wind_Speed</h4>
                             <p>小時平均值(m/s)</p>
-                            <p class="num" id="WS_HR">1.4</p>
+                            <p class="num" id="WS_HR"></p>
                         </div>
                         <div class="AQBox">
                             <h4>風向 Wind_Direct</h4>
                             <p>小時平均值(度)</p>
-                            <p class="num" id="WD_HR">322</p>
+                            <p class="num" id="WD_HR"></p>
                         </div>
                         <div class="AQBox">
                             <h4>濕度 RH</h4>
                             <p>小時平均值(%)</p>
-                            <p class="num" id="RH">61</p>
+                            <p class="num" id="RH"></p>
                         </div>
                         <div class="Empty"></div>
                     </div>
                 </div>
             </div>
             <div class="AQITable">
-                <div class="CC">
+                <div class="AQITableBox">
                     <p class="MyCaption">空氣品質指標 (AQI)</p>
                     <div class="AQIlegend">
-                        <table>
+                        <div class="bor-top-green">
+                            <p>良好</p>
+                            <p>0~50</p>
+                        </div>
+                        <div class="bor-top-yellow">
+                            <p>普通</p>
+                            <p>51~100</p>
+                        </div>
+                        <div class="bor-top-orange">
+                            <p class="index__name">對敏感族群不健康</p>
+                            <p class="index__range">101~150</p>
+                        </div>
+                        <div class="bor-top-red">
+                            <p class="index__name">對所有族群不健康</p>
+                            <p class="index__range">151~200</p>
+                        </div>
+                        <div class="bor-top-purple">
+                            <p class="index__name">非常不健康</p>
+                            <p class="index__range">201~300</p>
+                        </div>
+                        <div class="bor-top-brown">
+                            <p class="index__name">危害</p>
+                            <p class="index__range">301~500</p>
+                        </div>
+                    </div>
+                        <!-- <table>
                             <tbody>
                                 <tr>
                                     <td>
@@ -223,7 +244,7 @@
                                     </td>
                                 </tr>
                             </tbody>
-                        </table>
+                        </table> -->
                     </div>
                 </div>
             </div>
@@ -238,9 +259,11 @@
             <span>網站安全開放</span>
             <span>|</span>
             <span>網站資料開放宣告</span>
+            <br>
+            <span>WeHelp 4th Team-9  殺殺給油</span>
         </div>
     </footer>
-    <script src="../static/JS/signin.js"></script>
-    <script src="../static/JS/index.js"></script>
+    <script src=""></script>
+    <script src=""></script>
 </body>
 </html>
