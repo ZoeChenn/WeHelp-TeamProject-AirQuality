@@ -302,6 +302,30 @@ main{
                             font-family: "Noto Sans TC", "Roboto", sans-serif;
                         }
                     }
+                    .bor-left-green{
+                        border-left: 0.5rem solid #009865;
+                        background-color: #e5f4ef;
+                    }
+                    .bor-left-yellow{
+                        border-left: 0.5rem solid #fffb26;
+                        background-color: #ffffea;
+                    }
+                    .bor-left-orange{
+                        border-left: 0.5rem solid #ff9734;
+                        background-color: #fef4ea;
+                    }
+                    .bor-left-red{
+                        border-left: 0.5rem solid #ca0034;
+                        background-color: #fae5ea;
+                    }
+                    .bor-left-purple{
+                        border-left: 0.5rem solid #670099;
+                        background-color: #f0e5f5;
+                    }
+                    .bor-left-brown{
+                        border-left: 0.5rem solid #7e0123;
+                        background-color: #f1e5e9;
+                    }
                     .Empty{
                         width: 25%;
                         flex-direction: column;
@@ -334,10 +358,20 @@ main{
                 .AQIlegend{
                     display: flex;
                     justify-content: center;
-                    p{
+                    .indexName{
                         font-family: "Noto Sans TC", "Roboto", sans-serif;
                         display: block;
-                        padding:5px 10px;
+                        padding-top:20px;
+                        padding-left:5px;
+                        padding-right:5px;
+                        font-size: 1rem;
+                        color: #000;
+                    }
+                    .indexRange{
+                        font-family: "Noto Sans TC", "Roboto", sans-serif;
+                        display: block;
+                        padding-top: 10px;
+                        padding-bottom:20px;
                         font-size: 1rem;
                         color: #000;
                     }
@@ -468,6 +502,11 @@ footer{
                 .AQIFlex{
                     .AQI{
                         width: 90%;
+                        .AQIbox{
+                            .AQIcondition{
+                                right: 20%;
+                            }
+                        }
                     }
                     
                 }
@@ -501,12 +540,20 @@ footer{
                     margin:10px 5px ;
                     width: 100%;
                 }
-
             }
         }
         .article{
-
             .AQBoxs{
+                .AQIFlex{
+                    .AQI{
+                        width: 90%;
+                        .AQIbox{
+                            .AQIcondition{
+                                right: 25%;
+                            }
+                        }
+                    }
+                }
                 .clearfix{
                     .clearfixBox{
                         .AQBox {

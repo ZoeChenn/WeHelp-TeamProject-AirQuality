@@ -298,6 +298,30 @@ main .article .AQBoxs .clearfix .clearfixBox .AQBox .num {
   color: #000000;
   font-family: "Noto Sans TC", "Roboto", sans-serif;
 }
+main .article .AQBoxs .clearfix .clearfixBox .bor-left-green {
+  border-left: 0.5rem solid #009865;
+  background-color: #e5f4ef;
+}
+main .article .AQBoxs .clearfix .clearfixBox .bor-left-yellow {
+  border-left: 0.5rem solid #fffb26;
+  background-color: #ffffea;
+}
+main .article .AQBoxs .clearfix .clearfixBox .bor-left-orange {
+  border-left: 0.5rem solid #ff9734;
+  background-color: #fef4ea;
+}
+main .article .AQBoxs .clearfix .clearfixBox .bor-left-red {
+  border-left: 0.5rem solid #ca0034;
+  background-color: #fae5ea;
+}
+main .article .AQBoxs .clearfix .clearfixBox .bor-left-purple {
+  border-left: 0.5rem solid #670099;
+  background-color: #f0e5f5;
+}
+main .article .AQBoxs .clearfix .clearfixBox .bor-left-brown {
+  border-left: 0.5rem solid #7e0123;
+  background-color: #f1e5e9;
+}
 main .article .AQBoxs .clearfix .clearfixBox .Empty {
   width: 25%;
   flex-direction: column;
@@ -330,10 +354,20 @@ main .article .AQITable .AQITableBox .AQIlegend {
   display: flex;
   justify-content: center;
 }
-main .article .AQITable .AQITableBox .AQIlegend p {
+main .article .AQITable .AQITableBox .AQIlegend .indexName {
   font-family: "Noto Sans TC", "Roboto", sans-serif;
   display: block;
-  padding: 5px 10px;
+  padding-top: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 1rem;
+  color: #000;
+}
+main .article .AQITable .AQITableBox .AQIlegend .indexRange {
+  font-family: "Noto Sans TC", "Roboto", sans-serif;
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 20px;
   font-size: 1rem;
   color: #000;
 }
@@ -437,6 +471,9 @@ footer .foot span {
   main .article .AQBoxs .AQIFlex .AQI {
     width: 90%;
   }
+  main .article .AQBoxs .AQIFlex .AQI .AQIbox .AQIcondition {
+    right: 20%;
+  }
   main .article .AQBoxs .clearfix .clearfixBox {
     width: 90%;
   }
@@ -454,6 +491,12 @@ footer .foot span {
   main .Map .clearFix .inputField {
     margin: 10px 5px;
     width: 100%;
+  }
+  main .article .AQBoxs .AQIFlex .AQI {
+    width: 90%;
+  }
+  main .article .AQBoxs .AQIFlex .AQI .AQIbox .AQIcondition {
+    right: 25%;
   }
   main .article .AQBoxs .clearfix .clearfixBox .AQBox {
     width: 100%;
