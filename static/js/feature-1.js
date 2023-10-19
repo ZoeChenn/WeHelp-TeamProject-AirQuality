@@ -9,10 +9,11 @@ searchBtn.addEventListener("click", (event) => {
 });
 
 function fetchCardData(){
-  const area = doms.area.options[doms.time.selectedIndex];
-  const country = doms.country.options[doms.time.selectedIndex];
-  const site = doms.site.options[doms.time.selectedIndex];
-  const time = doms.time.options[doms.time.selectedIndex];
+  const area = doms.area.options[doms.area.selectedIndex].value;
+  const country = doms.country.options[doms.country.selectedIndex].value;
+  const site = doms.site.options[doms.site.selectedIndex].value;
+  const time = doms.time.options[doms.time.selectedIndex].value+":00";
+  console.log(area,country,site,time)
   /*country="桃園市"
   site="中壢"
   time="2023-10-19 22:00:00";*/
