@@ -107,8 +107,7 @@ def dc_post(data):
         time.sleep(5)
 
 
-
-@app.route("/api", method=["POST"])
+@app.route("/api", methods=["POST"])
 def api():
     data = request.get_json()
     data = data.get("data")
@@ -134,8 +133,7 @@ def api():
     return response
 
 
-
-@app.route("/", method=["POST"])
+@app.route("/", methods=["POST"])
 def index():
     north = [i for i in range(1, 28)] + [64, 65, 66, 67, 68, 70, 84, 311]
     central = [i for i in range(28, 39)] + [41, 69, 72, 83, 85, 201, 310]
@@ -190,6 +188,7 @@ def index():
 @app.route("/comingsoon")
 def coming_soon():
     return make_response("coming...soon...", 404)
+
 
 scheduler.start()
 app.run(host="0.0.0.0", port=3000)
