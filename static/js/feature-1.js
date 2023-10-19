@@ -1,5 +1,5 @@
 window.addEventListener("load", function () {
-  fetch("/", {
+  fetch("/api", {
     method: "GET",
   })
     .then((response) => {
@@ -8,7 +8,7 @@ window.addEventListener("load", function () {
     .then((data) => {
       console.log(data);
       const jsonData = JSON.stringify(data);
-      setData(jsonData);
+      setCardData(jsonData);
     })
     .catch((error) => {
       console.error(error);
@@ -18,18 +18,18 @@ window.addEventListener("load", function () {
 const searchBtn = document.querySelector(".searchBtn");
 searchBtn.addEventListener("click", (event) => {
   event.preventDefault();
-  const area = document.querySelector(".area").value;
-  const country = document.querySelector(".country").value;
-  const siteName = document.querySelector(".siteName").value;
-  const time = document.querySelector(".time").value;
+  const area = document.querySelector("#ddl_Area");
+  const country = document.querySelector("#ddl_County");
+  const site = document.querySelector("#ddl_Site");
+  const time = document.querySelector("#ddl_Time");
   const info = {
-    area: area,
+    //area: area,
     county: country,
-    siteName: siteName,
-    time: time,
+    siteName: site,
+    datacreationdate: time,
   };
-  fetch(`/`, {
-    method: "POST",
+  fetch(`/api`, {
+    method: "PUT",
     body: JSON.stringify(info),
     headers: new Headers({
       "content-type": "application/json",
@@ -41,7 +41,7 @@ searchBtn.addEventListener("click", (event) => {
     .then((data) => {
       console.log(data);
       const jsonData = JSON.stringify(data);
-      setData(jsonData);
+      setCardData(jsonData);
     })
     .catch((error) => {
       console.error(error);
@@ -50,12 +50,12 @@ searchBtn.addEventListener("click", (event) => {
 
 //下拉選單
 function fetchDropdownData() {
-  fetch("/api")
+  fetch("/")
     .then((response) => {
       return response.json();
     })
     .then((data) => {
-      putListData(data);
+      setListData(jsonData, 0);
     })
     .catch((error) => {
       console.error(error);
