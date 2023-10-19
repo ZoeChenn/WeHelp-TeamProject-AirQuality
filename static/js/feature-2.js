@@ -83,9 +83,21 @@ const level={
 let data={};
 // 下拉選單的資料
 let list={
-    "area":["北部", "中部", "南部", "東部", "外島"],
-    "country":[],
-    "site":[],
+    "area":["北部空品區", "竹苗空品區","中部空品區", "雲嘉南空品區", "高屏空品區", "宜蘭空品區", "花東空品區","其他"],
+    "country":[["基隆市","臺北市","新北市","桃園市"], ["新竹市","新竹縣", "苗栗縣"],["台中市","南投縣","彰化縣"],["雲林縣","嘉義市","嘉義縣","臺南市"],["高雄市","屏東縣"],["宜蘭縣"],["花蓮縣","臺東縣"],["澎湖縣","金門縣","連江縣"]],
+    "site":[
+           [["基隆"],
+            ["士林", "大同", "中山", "古亭", "松山", "陽明", "萬華"],
+            ["三重","土城","永和","汐止","板橋","林口","淡水","菜寮","新店","新莊","萬里","新北(樹林)","富貴角"],
+            ["中壢","龍潭","平鎮","觀音","大園","桃園"]],
+           [["新竹"],["竹東", "湖口"],["三義","苗栗","頭份"]],
+           [["大里","西屯","沙鹿","忠明","豐原","臺中(大甲)"],["竹山","南投","埔里"],["二林","彰化","線西","彰化(員林)","大城"]],
+           [["斗六","崙背", "麥寮","臺西"],["嘉義"],["朴子","新港"],["安南","善化","新營","臺南","臺南(麻豆)"]],
+           [["大寮","小港","仁武","左營","林園","前金","前鎮","美濃","復興","楠梓","鳳山","橋頭","高雄(湖內)"],["屏東","恆春","潮州","屏東(琉球)","屏東(枋山)"]],
+           [["冬山","宜蘭"]],
+           [["花蓮"],["臺東","關山"]],
+           [["馬公"],["金門"],["馬祖"]]
+],
     "time":[],
 };
 // 測試用
@@ -128,21 +140,12 @@ let jsondata2={
 };*/
 
 /** 
- * 設定list中的資料
- * @param {Object} jsonData 後端傳送的json物件
+ * 設定list中的時間
  */
-function setListData( jsondata){
+function settimeData(){
     let now = new Date().getTime();
     let time = new Date();
 
-    for(let i=0; i < jsondata["data"].length; i++){
-        list["country"][i] = jsondata["data"][i]["county"];
-        let temp=[];
-        for(let j=0; j < jsondata["data"][i]["sitename"].length; j++){
-            temp[j] = jsondata["data"][i]["sitename"][j];
-        }
-        list["site"][i] = temp;
-    }
     for(let i=0; i < 24; i++){
         time.setTime(now-3600000*i);
         if(time.getMonth()+1<10){
@@ -158,7 +161,7 @@ function setListData( jsondata){
  * @param {Object} list 下拉選單的資料
  * @param {Number} index 目前選中縣市在list中的index
  */
-function putListData(list, index){
+function putListData(list){
     // console.log(list);
     doms.area.innerHTML="";
     for(let i=0; i<list["area"].length; i++){
@@ -166,27 +169,27 @@ function putListData(list, index){
         option.textContent = list["area"][i];
         doms.area.appendChild(option);
     }
-    doms.country.innerHTML="";
-    for(let i=0; i<list["country"].length; i++){
-        let option = document.createElement("option");
-        option.textContent = list["country"][i];
-        option.dataset.index = i;
-        if(i==index){
-            option.selected = true;
-        }
-        doms.country.appendChild(option);
-    }
-    doms.site.innerHTML="";
-    for(let i=0; i<list["site"][index].length; i++){
-        let option = document.createElement("option");
-        option.textContent = list["site"][index][i];
-        doms.site.appendChild(option);
-    }
     doms.time.innerHTML="";
     for(let i=0; i<list["time"].length; i++){
         let option = document.createElement("option");
         option.textContent = list["time"][i];
         doms.time.appendChild(option);
+    }
+}
+function putCountryData(list, index){
+    doms.country.innerHTML="";
+    for(let i=0; i<list["country"][index].length; i++){
+        let option = document.createElement("option");
+        option.textContent = list["country"][index][i];
+        doms.country.appendChild(option);
+    }
+}
+function putSiteData(list, index1, index2){
+    doms.site.innerHTML="";
+    for(let i=0; i<list["site"][index1][index2].length; i++){
+        let option = document.createElement("option");
+        option.textContent = list["site"][index1][index2][i];
+        doms.site.appendChild(option);
     }
 }
 /**
