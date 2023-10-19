@@ -1,3 +1,4 @@
+// html元素
 const doms={
     data:{
         site: document.querySelector("#site"),
@@ -26,6 +27,7 @@ const doms={
     site: document.querySelector("#ddl_Site"),
     time: document.querySelector("#ddl_Time"),
 };
+// 空氣品質分級數據
 const level={
     aqi: {
         purple: 300,
@@ -77,14 +79,16 @@ const level={
         green: 30,
     },
 }
+// 卡片的資料
 let data={};
+// 下拉選單的資料
 let list={
     "area":["北部", "中部", "南部", "東部", "外島"],
     "country":[],
     "site":[],
     "time":[],
 };
-
+// 測試用
 /*let jsondata1={
     "data": [
         {
@@ -123,7 +127,11 @@ let jsondata2={
     "siteid": "17",
 };*/
 
-
+/** 
+ * 設定list中的資料
+ * @param {Object} jsonData 後端傳送的json物件
+ * @param {Number} index 選中縣市(在jsonData["data"][]中)的index
+ */
 function setListData( jsondata, index){
     let now = new Date().getTime();
     let time = new Date();
@@ -139,6 +147,10 @@ function setListData( jsondata, index){
         list["time"][i] = time.getFullYear().toString() + "-" + time.getMonth().toString() + "-" + time.getDate().toString() + " " + time.getHours().toString() + ":00";
     }
 }
+/** 
+ * 將list中的內容更新至畫面
+ * @param {Object} list 下拉選單的資料
+ */
 function putListData(list){
     console.log(list);
     for(let i=0; i<list["area"].length; i++){
@@ -162,7 +174,12 @@ function putListData(list){
         doms.time.appendChild(option);
     }
 }
-
+/**
+ * 設定.AQIbox或.AQBox的顏色
+ * @param {String} type 資料的名稱
+ * @param {Object} element 要設定的html元素
+ * @param {String} box_class "AQIbox" or "AQBox"
+ */
 function setCardColor( type, element, box_class){
     if(parseFloat(data[type]) > level[type].purple){
         element.className = box_class +" bor-left-brown";
@@ -180,7 +197,10 @@ function setCardColor( type, element, box_class){
         element.className = box_class;
     }
 }
-
+/**
+ * 設定data中的資料
+ * @param {Object} jsondata 後端傳送的json物件
+ */
 function setCardData(jsondata) {
     data={
         site: jsondata["sitename"],
@@ -211,14 +231,17 @@ function setCardData(jsondata) {
     setCardColor( "so2", doms.aqbox[4], "AQBox");
     setCardColor( "no2", doms.aqbox[5], "AQBox");
 }
-
+/**
+ * 將data中的資料更新至畫面
+ * @param {Object} data 
+ */
 function putCardData(data){
     for(let key in data){
         doms.data[key].textContent = data[key];
     }
 }
-
-setListData(jsondata1, 0);
-putListData(list);
-setCardData(jsondata2);
-putCardData(data);
+// 測試用
+// setListData(jsondata1, 0);
+// putListData(list);
+// setCardData(jsondata2);
+// putCardData(data);
