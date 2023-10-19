@@ -11,7 +11,7 @@ dc_bot = os.getenv("DC_API")
 dc_inv = os.getenv("INVITE")
 gov_url = os.getenv("GOV_URL")
 
-app = Flask(__name__, static_folder="static",)
+app = Flask(__name__, static_folder="static", static_url_path="/")
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 app.config["JSON_SORT_KEYS"] = False
 
