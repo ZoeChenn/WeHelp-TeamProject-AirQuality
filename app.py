@@ -107,33 +107,39 @@ def dc_post(data):
         time.sleep(5)
 
 
-@app.route("/api", methods=["POST"])
+
+@app.route("/api",methods=["POST","GET"])
 def api():
-    data = request.get_json()
-    data = data.get("data")
-    county = data.get("county")
-    sitename = data.get("sitename")
-    datacreationdate = data.get("time")
+    try:
+        data = request.get_json()
+        data = data.get("data")
+        county = data.get("county")
+        sitename = data.get("sitename")
+        datacreationdate = data.get("time")
 
-    # SiteName = "中壢"
-    # county = "桃園市"
-    # datacreationdate = "2023-10-10 13:00:00"
+        # SiteName = "中壢"
+        # county = "桃園市"
+        # datacreationdate = "2023-10-10 13:00:00"
 
-    ori_date = datetime.strptime(datacreationdate, "%Y-%m-%d %H:%M:%S")
-    new_date = ori_date - timedelta(hours=1)
-    pre_datacreationdate = new_date.strftime("%Y-%m-%d %H:%M:%S")
+        ori_date = datetime.strptime(datacreationdate, "%Y-%m-%d %H:%M:%S")
+        new_date = ori_date - timedelta(hours=1)
+        pre_datacreationdate = new_date.strftime("%Y-%m-%d %H:%M:%S")
 
-    data = requests.get(
-        url=f"{gov_url}&filters=SiteName,EQ,{sitename}|county,EQ,{county}|"
-        f"datacreationdate,GT,{pre_datacreationdate}|datacreationdate,LE,{datacreationdate}"
-    )
-    result = data.json()
-    response = make_response({"data": result.get("records")})
+        data = requests.get(
+            url=f"{gov_url}&filters=SiteName,EQ,{sitename}|county,EQ,{county}|"
+            f"datacreationdate,GT,{pre_datacreationdate}|datacreationdate,LE,{datacreationdate}"
+        )
+        result = data.json()
+        response = make_response({"data": result.get("records")})
 
-    return response
+        return response
+    except Exception as e:
+        error_message = str(e)
+        return make_response({"error": error_message}, 500)
 
 
-@app.route("/", methods=["POST"])
+
+@app.route("/",methods=["POST","GET"])
 def index():
     north = [i for i in range(1, 28)] + [64, 65, 66, 67, 68, 70, 84, 311]
     central = [i for i in range(28, 39)] + [41, 69, 72, 83, 85, 201, 310]
@@ -178,7 +184,7 @@ def index():
             if sitename not in dic[county]:
                 dic[county].append(sitename)
     result = []
-    for i in result.items():
+    for i in dic.items():
         result.append({"county":i[0],"sitename":i[1]})
     # 資料處理，應該可以優化
 
