@@ -145,7 +145,12 @@ function setListData( jsondata){
     }
     for(let i=0; i < 24; i++){
         time.setTime(now-3600000*i);
-        list["time"][i] = time.getFullYear().toString() + "-" + time.getMonth().toString() + "-" + time.getDate().toString() + " " + time.getHours().toString() + ":00";
+        if(time.getMonth()+1<10){
+            list["time"][i] = time.getFullYear().toString() + "-" + "0" + (time.getMonth()+1).toString() + "-" + time.getDate().toString() + " " + time.getHours().toString() + ":00";
+        }
+        else{
+            list["time"][i] = time.getFullYear().toString() + "-" + (time.getMonth()+1).toString() + "-" + time.getDate().toString() + " " + time.getHours().toString() + ":00";
+        }
     }
 }
 /** 
