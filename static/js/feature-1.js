@@ -1,21 +1,57 @@
 window.addEventListener("load", function () {
-  fetch("/api", {
-    method: "GET",
+  const area = "北部";
+  const requestData = {
+    area: area,
+  };
+  const county = "新北市";
+  const time = "2023-10-10 17:00:00";
+  const sitename = "新北(樹林)";
+  const request = {
+    area: area,
+    county: county,
+    sitename: sitename,
+    datacreationdate: time,
+  };
+
+  fetch("/", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(requestData),
   })
     .then((response) => {
+      console.log(response);
       return response.json();
     })
-    .then((data) => {
-      console.log(data);
-      const jsonData = JSON.stringify(data);
+    .then((listData) => {
+      setListData(listData, 0);
+      putListData(list);
+
+      return fetch("/api", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(request),
+      });
+    })
+    .then((response) => {
+      console.log(response);
+      return response.json();
+    })
+    .then((jsonData) => {
+      console.log(jsonData);
       setCardData(jsonData);
+      putCardData(data);
     })
     .catch((error) => {
       console.error(error);
     });
 });
+
 //搜尋
-const searchBtn = document.querySelector(".searchBtn");
+const searchBtn = document.querySelector(".seachField");
 searchBtn.addEventListener("click", (event) => {
   event.preventDefault();
   const area = document.querySelector("#ddl_Area");
@@ -29,11 +65,11 @@ searchBtn.addEventListener("click", (event) => {
     datacreationdate: time,
   };
   fetch(`/api`, {
-    method: "PUT",
-    body: JSON.stringify(info),
+    method: "POST",
     headers: new Headers({
       "content-type": "application/json",
     }),
+    body: JSON.stringify(info),
   })
     .then(function (response) {
       return response.json();
@@ -49,13 +85,24 @@ searchBtn.addEventListener("click", (event) => {
 });
 
 //下拉選單
+
 function fetchDropdownData() {
-  fetch("/")
+  const area = document.querySelector("#ddl_Area");
+  const requestData = {
+    area: area,
+  };
+  fetch("/", {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(requestData),
+  })
     .then((response) => {
       return response.json();
     })
-    .then((data) => {
-      setListData(jsonData, 0);
+    .then((jsondata) => {
+      setListData(jsondata, 0);
     })
     .catch((error) => {
       console.error(error);
