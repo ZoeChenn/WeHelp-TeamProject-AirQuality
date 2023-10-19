@@ -95,7 +95,7 @@ let list={
         "county": "台中", "sitename": ["1", "2", "3"]
         },
         {
-        "county": "台中", "sitename": ["1", "2", "3"]
+        "county": "台南", "sitename": ["4", "5", "6"]
         },
     ]
 };
@@ -130,17 +130,18 @@ let jsondata2={
 /** 
  * 設定list中的資料
  * @param {Object} jsonData 後端傳送的json物件
- * @param {Number} index 選中縣市(在jsonData["data"][]中)的index
  */
-function setListData( jsondata, index){
+function setListData( jsondata){
     let now = new Date().getTime();
     let time = new Date();
 
     for(let i=0; i < jsondata["data"].length; i++){
         list["country"][i] = jsondata["data"][i]["county"];
-    }
-    for(let i=0; i < jsondata["data"][index]["sitename"].length; i++){
-        list["site"][i] = jsondata["data"][index]["sitename"][i];
+        let temp=[];
+        for(let j=0; j < jsondata["data"][i]["sitename"].length; j++){
+            temp[j] = jsondata["data"][i]["sitename"][j];
+        }
+        list["site"][i] = temp;
     }
     for(let i=0; i < 24; i++){
         time.setTime(now-3600000*i);
@@ -150,24 +151,33 @@ function setListData( jsondata, index){
 /** 
  * 將list中的內容更新至畫面
  * @param {Object} list 下拉選單的資料
+ * @param {Number} index 目前選中縣市在list中的index
  */
-function putListData(list){
-    console.log(list);
+function putListData(list, index){
+    // console.log(list);
+    doms.area.innerHTML="";
     for(let i=0; i<list["area"].length; i++){
         let option = document.createElement("option");
         option.textContent = list["area"][i];
         doms.area.appendChild(option);
     }
+    doms.country.innerHTML="";
     for(let i=0; i<list["country"].length; i++){
         let option = document.createElement("option");
         option.textContent = list["country"][i];
+        option.dataset.index = i;
+        if(i==index){
+            option.selected = true;
+        }
         doms.country.appendChild(option);
     }
-    for(let i=0; i<list["site"].length; i++){
+    doms.site.innerHTML="";
+    for(let i=0; i<list["site"][index].length; i++){
         let option = document.createElement("option");
-        option.textContent = list["site"][i];
+        option.textContent = list["site"][index][i];
         doms.site.appendChild(option);
     }
+    doms.time.innerHTML="";
     for(let i=0; i<list["time"].length; i++){
         let option = document.createElement("option");
         option.textContent = list["time"][i];
@@ -241,7 +251,7 @@ function putCardData(data){
     }
 }
 // 測試用
-// setListData(jsondata1, 0);
-// putListData(list);
+// setListData(jsondata1);
+// putListData(list, 0);
 // setCardData(jsondata2);
 // putCardData(data);
