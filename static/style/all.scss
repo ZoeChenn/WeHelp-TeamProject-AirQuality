@@ -1,0 +1,591 @@
+* {
+    margin: 0px;
+}
+
+header {
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background-color: #ffffff; 
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 
+    z-index: 1000; 
+    .head{
+        display: flex;
+        width: 1200px;
+        justify-content: space-between;
+        align-items: center;
+        a{
+            text-decoration: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .left {
+                padding: 10px;
+                flex: none; 
+                font-family: "Noto Sans TC", "Roboto", sans-serif;
+                font-size: 30px;
+                font-weight: 700;
+                text-align: center;
+                color: #000000;
+            }
+        }
+        .right {
+            display: flex; 
+            justify-content: space-evenly;
+            align-items: center;
+            height:34px;
+                .item{
+                flex: none; 
+                font-family: "Noto Sans TC", "Roboto", sans-serif;
+                //justify-content: space-between;
+                padding:10px;
+                align-items: center;
+                font-size: 16px;
+                color: #189ad3;
+            }
+            .mobile-menu{
+                display: none;
+            }
+        }
+    }
+}
+
+section {      
+    display: flex; 
+    margin-top: 90px;
+    .bread-bg {
+        height: 52px;
+        width: 100%;
+        background-color:#f0f5f9 ;
+        display: flex; 
+        justify-content: center; 
+        align-items: center;
+    }
+    .comming-bg{
+        position: fixed;
+        bottom: 50%;
+        right: 42%;
+        margin: 0; 
+    }
+    .bread {
+        display: flex;
+        width: 1200px;
+        align-items: center;
+        justify-content: start; 
+        .path {
+            span{
+                color: #666;
+                font-family: "Noto Sans TC", "Roboto", sans-serif;
+                font-size: 14px;
+                width: 100%;
+                padding: 2px;
+            }
+        }
+    }
+}
+
+main{  
+    .discord{
+        position: fixed;
+        bottom: 10px;
+        right: 5%;
+        margin: 0; 
+        animation: scrollUpDown 2s infinite alternate;
+        border: none; background: none; padding: 0;
+        cursor: pointer;
+        z-index: 20;
+    }
+    @keyframes scrollUpDown {
+        0% {
+            bottom: 30px; 
+        }
+        100% {
+            bottom: 10; 
+        }
+    }
+    .dataHead{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .dataTitle{
+            width: 1200px;
+            margin: 30px 0px;
+            color:#189ad3 ;
+            font-family: "Noto Sans TC", "Roboto", sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+        }
+    }
+    .Map{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .clearFix{
+            width: 1200px;
+            display: flex;
+            justify-content: space-between;
+            .inputField{
+                margin: 30px 0px;
+                display: inline-block;
+                flex: 1;
+                label {
+                    display: block;
+                    font-weight: bold;
+                    margin-bottom: 5px;
+                    font-family: "Noto Sans TC", "Roboto", sans-serif;
+                }
+                select {
+                    width: 80%;
+                    padding: 10px;
+                    border: 1px solid #ccc;
+                    border-radius: 4px;
+                }
+            }
+            .inputFieldFix {
+                text-align: center;
+                display: flex;
+                align-self: self-end;
+                margin: 30px 0px;
+                .seachField {
+                    background-color: #189ad3;
+                    color: white;
+                    padding: 10px 20px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                    font-weight: bold;
+                    font-family: "Noto Sans TC", "Roboto", sans-serif;
+                }
+                .seachField:hover {
+                    background-color: #41b8eb;
+                }
+            }
+        }
+    }
+    .lineContainer{
+        display: flex;
+        justify-content: center;
+        .line {
+            border: 1px solid #E8E8E8;
+            border-top: 0px;
+            width: 1200px;
+        }
+    }
+    .article{
+        .station{
+            margin: 30px 0px;
+            display: flex;
+            justify-content: center;
+            .stationTitle{
+                width: 1200px;
+                font-family: "Noto Sans TC", "Roboto", sans-serif;
+                display: flex;
+                .site{
+                    padding-left: 10px ;
+                    p{
+                        color: #666;
+                        font-family: "Noto Sans TC", "Roboto", sans-serif;
+                    }
+                }
+            }
+        }
+        .AQTitle{
+            display: flex;
+            justify-content: center;
+            h4{
+                width: 1200px;
+                font-family: "Noto Sans TC", "Roboto", sans-serif;
+            }
+        }
+        .AQBoxs{ 
+            .AQIFlex{
+                display: flex;
+                justify-content: center;
+                .AQI{
+                    display: flex;
+                    justify-content: start;
+                    width: 1200px;
+                    .AQIbox {
+                        width: 100%;
+                        position: relative;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: self-start;
+                        margin: 10px;
+                        padding: 20px;
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                        font-family: "Noto Sans TC", "Roboto", sans-serif;
+                        h4{
+                            font-weight: bold;
+                            font-family: "Noto Sans TC", "Roboto", sans-serif;
+                        }
+                        #POLLUTANT{
+                            margin: 10px 0;
+                            text-align: start;
+                            font-size: 14px;
+                            color: #666;
+                            font-family: "Noto Sans TC", "Roboto", sans-serif;
+                        }
+                        .AQIcondition{
+                            position: absolute;
+                            right: 15%;
+                            top:25%;
+                            margin: 10px 0;
+                            text-align: start;
+                            font-size: 16px;
+                            color: #000000;
+                            font-family: "Noto Sans TC", "Roboto", sans-serif;
+                        }
+                        .num{
+                            position: absolute;
+                            right: 8%;
+                            top:29%;
+                            font-size: 28px;
+                            font-weight: bold;
+                            color: #000000;
+                            font-family: "Noto Sans TC", "Roboto", sans-serif;
+                        }
+                    }
+                    .bor-left-green{
+                        border-left: 0.5rem solid #009865;
+                        background-color: #e5f4ef;
+                    }
+                    .bor-left-yellow{
+                        border-left: 0.5rem solid #fffb26;
+                        background-color: #ffffea;
+                    }
+                    .bor-left-orange{
+                        border-left: 0.5rem solid #ff9734;
+                        background-color: #fef4ea;
+                    }
+                    .bor-left-red{
+                        border-left: 0.5rem solid #ca0034;
+                        background-color: #fae5ea;
+                    }
+                    .bor-left-purple{
+                        border-left: 0.5rem solid #670099;
+                        background-color: #f0e5f5;
+                    }
+                    .bor-left-brown{
+                        border-left: 0.5rem solid #7e0123;
+                        background-color: #f1e5e9;
+                    }
+                }
+            }
+            .clearfix{
+                display: flex;
+                justify-content: center; 
+                .clearfixBox{
+                    display: flex;
+                    width: 1200px;
+                    justify-content: space-between; 
+                    flex-wrap: wrap;
+                    .AQBox {
+                        position: relative;
+                        width: 25%;
+                        flex-direction: column;
+                        align-items: self-start;
+                        margin: 10px;
+                        padding: 20px;
+                        border: 1px solid #ccc;
+                        font-family: "Noto Sans TC", "Roboto", sans-serif;
+                        border-radius: 5px;
+                        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+                        .AQIcondition{
+                            margin: 10px 0;
+                            text-align: start;
+                            font-size: 16px;
+                            color: #666;
+                            font-family: "Noto Sans TC", "Roboto", sans-serif;
+                        }
+                        p{
+                            margin: 10px 0;
+                            text-align: start;
+                            font-size: 16px;
+                            color: #666;
+                            font-family: "Noto Sans TC", "Roboto", sans-serif;
+                        }
+                        h4{
+                            font-weight: bold;
+                            font-family: "Noto Sans TC", "Roboto", sans-serif;
+                        }
+                        .num{
+                            position: absolute;
+                            top:25%;
+                            right: 10%;
+                            font-size: 28px;
+                            font-weight: bold;
+                            color: #000000;
+                            font-family: "Noto Sans TC", "Roboto", sans-serif;
+                        }
+                    }
+                    .bor-left-green{
+                        border-left: 0.5rem solid #009865;
+                        background-color: #e5f4ef;
+                    }
+                    .bor-left-yellow{
+                        border-left: 0.5rem solid #fffb26;
+                        background-color: #ffffea;
+                    }
+                    .bor-left-orange{
+                        border-left: 0.5rem solid #ff9734;
+                        background-color: #fef4ea;
+                    }
+                    .bor-left-red{
+                        border-left: 0.5rem solid #ca0034;
+                        background-color: #fae5ea;
+                    }
+                    .bor-left-purple{
+                        border-left: 0.5rem solid #670099;
+                        background-color: #f0e5f5;
+                    }
+                    .bor-left-brown{
+                        border-left: 0.5rem solid #7e0123;
+                        background-color: #f1e5e9;
+                    }
+                    .Empty{
+                        width: 25%;
+                        flex-direction: column;
+                        align-items: self-start;
+                        margin: 10px;
+                        padding: 20px;
+                        border-radius: 5px;
+                    }
+                }
+            }
+        }
+        .AQITable{
+            display: flex;
+            justify-content: center;
+            .AQITableBox{
+                width: 1200px;
+                text-align: center;
+                margin: 30px 0px;
+                .MyCaption{
+                    width: 100%;
+                    padding: 20px 0px;
+                    font-family: "Noto Sans TC", "Roboto", sans-serif;
+                    font-weight: bold;
+                    text-align: center;
+                    font-weight: bold;
+                    color: #000;
+                    background-color: #eeeced;
+                    border: 2px solid #FFF;
+                }
+                .AQIlegend{
+                    display: flex;
+                    justify-content: center;
+                    .indexName{
+                        font-family: "Noto Sans TC", "Roboto", sans-serif;
+                        display: block;
+                        padding-top:20px;
+                        padding-left:5px;
+                        padding-right:5px;
+                        font-size: 1rem;
+                        color: #000;
+                    }
+                    .indexRange{
+                        font-family: "Noto Sans TC", "Roboto", sans-serif;
+                        display: block;
+                        padding-top: 10px;
+                        padding-bottom:20px;
+                        font-size: 1rem;
+                        color: #000;
+                    }
+                    .bor-top-green{
+                        width: 100%;
+                        margin: 2px;
+                        border-top: 0.5rem solid #009865;
+                        background-color: #e5f4ef;
+                        
+                    }
+                    .bor-top-yellow{
+                        width: 100%;
+                        margin: 2px;
+                        border-top: 0.5rem solid #fffb26;
+                        background-color: #ffffea;
+                    }
+                    .bor-top-orange{
+                        width: 100%;
+                        margin: 2px;
+                        border-top: 0.5rem solid #ff9734;
+                        background-color: #fef4ea;
+                    }
+                    .bor-top-red{
+                        width: 100%;
+                        margin: 2px;
+                        border-top: 0.5rem solid #ca0034;
+                        background-color: #fae5ea;
+                    }
+                    .bor-top-purple{
+                        width: 100%;
+                        margin: 2px;
+                        border-top: 0.5rem solid #670099;
+                        background-color: #f0e5f5;
+                    }
+                    .bor-top-brown{
+                        width: 100%;
+                        margin: 2px;
+                        border-top: 0.5rem solid #7e0123;
+                        background-color: #f1e5e9;
+                    }
+                }
+            }
+        }
+    }
+}
+footer{
+    width: 100%;
+    height: 104px;
+    background-color: #f0f5f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    .foot{
+        color:#189ad3 ;
+        font-family: "Noto Sans TC", "Roboto", sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        span{
+            padding: 2px;
+            font-family: "Noto Sans TC", "Roboto", sans-serif;
+        }
+    }
+}
+
+@media(max-width:1200px){
+    header{
+        .head{
+            width: 95%;
+            .right{
+                .item{
+                    display: none;
+                }
+                .mobile-menu{
+                    display: block;
+                }
+            }
+        }
+    }
+    section{
+        .bread-bg{
+            .bread{
+                width: 90%;
+            }
+        }
+    }
+    main{
+        .dataHead{
+            .dataTitle{
+                width: 90%;
+            }
+        }
+        .lineContainer{
+            .line{
+                width: 90%;
+            }
+        }
+        .Map{
+            .clearFix{
+                width: 90%;
+                display: block;
+                
+                .inputField{
+                    margin:20px 5px ;
+                    width: calc(50% - 1rem);
+                    select {
+                        width: 100%;
+                    }
+                }
+                .inputFieldFix{
+                    justify-content: center;
+                    margin: 10px 0px;
+                }
+            }
+        }
+        .article{
+            .station{
+                .stationTitle{
+                    width: 90%;
+                }
+            }
+            .AQTitle{
+                h4{
+                    width: 90%;
+                }
+            }
+            .AQBoxs{
+                .AQIFlex{
+                    .AQI{
+                        width: 90%;
+                        .AQIbox{
+                            .AQIcondition{
+                                right: 20%;
+                            }
+                        }
+                    }
+                    
+                }
+                .clearfix{
+                    .clearfixBox{
+                        width: 90%;
+                        .AQBox {
+                            width: calc(40% - 1rem);
+                        }
+                        .Empty{
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .AQITable{
+                .AQITableBox{
+                    width: 90%;
+                }
+            }
+        }
+    }
+}
+
+@media(max-width:600px){
+
+    main{
+        .Map{
+            .clearFix{
+                .inputField{
+                    margin:10px 5px ;
+                    width: 100%;
+                }
+            }
+        }
+        .article{
+            .AQBoxs{
+                .AQIFlex{
+                    .AQI{
+                        width: 90%;
+                        .AQIbox{
+                            .AQIcondition{
+                                right: 25%;
+                            }
+                        }
+                    }
+                }
+                .clearfix{
+                    .clearfixBox{
+                        .AQBox {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

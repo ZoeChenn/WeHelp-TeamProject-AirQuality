@@ -1,0 +1,530 @@
+* {
+  margin: 0px;
+}
+
+header {
+  position: fixed;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+header .head {
+  display: flex;
+  width: 1200px;
+  justify-content: space-between;
+  align-items: center;
+}
+header .head a {
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .head a .left {
+  padding: 10px;
+  flex: none;
+  font-family: "Noto Sans TC", "Roboto", sans-serif;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  color: #000000;
+}
+header .head .right {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 34px;
+}
+header .head .right .item {
+  flex: none;
+  font-family: "Noto Sans TC", "Roboto", sans-serif;
+  padding: 10px;
+  align-items: center;
+  font-size: 16px;
+  color: #189ad3;
+}
+header .head .right .mobile-menu {
+  display: none;
+}
+
+section {
+  display: flex;
+  margin-top: 90px;
+}
+section .bread-bg {
+  height: 52px;
+  width: 100%;
+  background-color: #f0f5f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+section .comming-bg {
+  position: fixed;
+  bottom: 50%;
+  right: 42%;
+  margin: 0;
+}
+section .bread {
+  display: flex;
+  width: 1200px;
+  align-items: center;
+  justify-content: start;
+}
+section .bread .path span {
+  color: #666;
+  font-family: "Noto Sans TC", "Roboto", sans-serif;
+  font-size: 14px;
+  width: 100%;
+  padding: 2px;
+}
+
+main .discord {
+  position: fixed;
+  bottom: 10px;
+  right: 5%;
+  margin: 0;
+  animation: scrollUpDown 2s infinite alternate;
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+  z-index: 20;
+}
+@keyframes scrollUpDown {
+  0% {
+    bottom: 30px;
+  }
+  100% {
+    bottom: 10;
+  }
+}
+main .dataHead {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .dataHead .dataTitle {
+  width: 1200px;
+  margin: 30px 0px;
+  color: #189ad3;
+  font-family: "Noto Sans TC", "Roboto", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+}
+main .Map {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .Map .clearFix {
+  width: 1200px;
+  display: flex;
+  justify-content: space-between;
+}
+main .Map .clearFix .inputField {
+  margin: 30px 0px;
+  display: inline-block;
+  flex: 1;
+}
+main .Map .clearFix .inputField label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+  font-family: "Noto Sans TC", "Roboto", sans-serif;
+}
+main .Map .clearFix .inputField select {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+main .Map .clearFix .inputFieldFix {
+  text-align: center;
+  display: flex;
+  align-self: self-end;
+  margin: 30px 0px;
+}
+main .Map .clearFix .inputFieldFix .seachField {
+  background-color: #189ad3;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Noto Sans TC", "Roboto", sans-serif;
+}
+main .Map .clearFix .inputFieldFix .seachField:hover {
+  background-color: #41b8eb;
+}
+main .lineContainer {
+  display: flex;
+  justify-content: center;
+}
+main .lineContainer .line {
+  border: 1px solid #E8E8E8;
+  border-top: 0px;
+  width: 1200px;
+}
+main .article .station {
+  margin: 30px 0px;
+  display: flex;
+  justify-content: center;
+}
+main .article .station .stationTitle {
+  width: 1200px;
+  font-family: "Noto Sans TC", "Roboto", sans-serif;
+  display: flex;
+}
+main .article .station .stationTitle .site {
+  padding-left: 10px;
+}
+main .article .station .stationTitle .site p {
+  color: #666;
+  font-family: "Noto Sans TC", "Roboto", sans-serif;
+}
+main .article .AQTitle {
+  display: flex;
+  justify-content: center;
+}
+main .article .AQTitle h4 {
+  width: 1200px;
+  font-family: "Noto Sans TC", "Roboto", sans-serif;
+}
+main .article .AQBoxs .AQIFlex {
+  display: flex;
+  justify-content: center;
+}
+main .article .AQBoxs .AQIFlex .AQI {
+  display: flex;
+  justify-content: start;
+  width: 1200px;
+}
+main .article .AQBoxs .AQIFlex .AQI .AQIbox {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: "Noto Sans TC", "Roboto", sans-serif;
+}
+main .article .AQBoxs .AQIFlex .AQI .AQIbox h4 {
+  font-weight: bold;
+  font-family: "Noto Sans TC", "Roboto", sans-serif;
+}
+main .article .AQBoxs .AQIFlex .AQI .AQIbox #POLLUTANT {
+  margin: 10px 0;
+  text-align: start;
+  font-size: 14px;
+  color: #666;
+  font-family: "Noto Sans TC", "Roboto", sans-serif;
+}
+main .article .AQBoxs .AQIFlex .AQI .AQIbox .AQIcondition {
+  position: absolute;
+  right: 15%;
+  top: 25%;
+  margin: 10px 0;
+  text-align: start;
+  font-size: 16px;
+  color: #000000;
+  font-family: "Noto Sans TC", "Roboto", sans-serif;
+}
+main .article .AQBoxs .AQIFlex .AQI .AQIbox .num {
+  position: absolute;
+  right: 8%;
+  top: 29%;
+  font-size: 28px;
+  font-weight: bold;
+  color: #000000;
+  font-family: "Noto Sans TC", "Roboto", sans-serif;
+}
+main .article .AQBoxs .AQIFlex .AQI .bor-left-green {
+  border-left: 0.5rem solid #009865;
+  background-color: #e5f4ef;
+}
+main .article .AQBoxs .AQIFlex .AQI .bor-left-yellow {
+  border-left: 0.5rem solid #fffb26;
+  background-color: #ffffea;
+}
+main .article .AQBoxs .AQIFlex .AQI .bor-left-orange {
+  border-left: 0.5rem solid #ff9734;
+  background-color: #fef4ea;
+}
+main .article .AQBoxs .AQIFlex .AQI .bor-left-red {
+  border-left: 0.5rem solid #ca0034;
+  background-color: #fae5ea;
+}
+main .article .AQBoxs .AQIFlex .AQI .bor-left-purple {
+  border-left: 0.5rem solid #670099;
+  background-color: #f0e5f5;
+}
+main .article .AQBoxs .AQIFlex .AQI .bor-left-brown {
+  border-left: 0.5rem solid #7e0123;
+  background-color: #f1e5e9;
+}
+main .article .AQBoxs .clearfix {
+  display: flex;
+  justify-content: center;
+}
+main .article .AQBoxs .clearfix .clearfixBox {
+  display: flex;
+  width: 1200px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+main .article .AQBoxs .clearfix .clearfixBox .AQBox {
+  position: relative;
+  width: 25%;
+  flex-direction: column;
+  align-items: self-start;
+  margin: 10px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  font-family: "Noto Sans TC", "Roboto", sans-serif;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+main .article .AQBoxs .clearfix .clearfixBox .AQBox .AQIcondition {
+  margin: 10px 0;
+  text-align: start;
+  font-size: 16px;
+  color: #666;
+  font-family: "Noto Sans TC", "Roboto", sans-serif;
+}
+main .article .AQBoxs .clearfix .clearfixBox .AQBox p {
+  margin: 10px 0;
+  text-align: start;
+  font-size: 16px;
+  color: #666;
+  font-family: "Noto Sans TC", "Roboto", sans-serif;
+}
+main .article .AQBoxs .clearfix .clearfixBox .AQBox h4 {
+  font-weight: bold;
+  font-family: "Noto Sans TC", "Roboto", sans-serif;
+}
+main .article .AQBoxs .clearfix .clearfixBox .AQBox .num {
+  position: absolute;
+  top: 25%;
+  right: 10%;
+  font-size: 28px;
+  font-weight: bold;
+  color: #000000;
+  font-family: "Noto Sans TC", "Roboto", sans-serif;
+}
+main .article .AQBoxs .clearfix .clearfixBox .bor-left-green {
+  border-left: 0.5rem solid #009865;
+  background-color: #e5f4ef;
+}
+main .article .AQBoxs .clearfix .clearfixBox .bor-left-yellow {
+  border-left: 0.5rem solid #fffb26;
+  background-color: #ffffea;
+}
+main .article .AQBoxs .clearfix .clearfixBox .bor-left-orange {
+  border-left: 0.5rem solid #ff9734;
+  background-color: #fef4ea;
+}
+main .article .AQBoxs .clearfix .clearfixBox .bor-left-red {
+  border-left: 0.5rem solid #ca0034;
+  background-color: #fae5ea;
+}
+main .article .AQBoxs .clearfix .clearfixBox .bor-left-purple {
+  border-left: 0.5rem solid #670099;
+  background-color: #f0e5f5;
+}
+main .article .AQBoxs .clearfix .clearfixBox .bor-left-brown {
+  border-left: 0.5rem solid #7e0123;
+  background-color: #f1e5e9;
+}
+main .article .AQBoxs .clearfix .clearfixBox .Empty {
+  width: 25%;
+  flex-direction: column;
+  align-items: self-start;
+  margin: 10px;
+  padding: 20px;
+  border-radius: 5px;
+}
+main .article .AQITable {
+  display: flex;
+  justify-content: center;
+}
+main .article .AQITable .AQITableBox {
+  width: 1200px;
+  text-align: center;
+  margin: 30px 0px;
+}
+main .article .AQITable .AQITableBox .MyCaption {
+  width: 100%;
+  padding: 20px 0px;
+  font-family: "Noto Sans TC", "Roboto", sans-serif;
+  font-weight: bold;
+  text-align: center;
+  font-weight: bold;
+  color: #000;
+  background-color: #eeeced;
+  border: 2px solid #FFF;
+}
+main .article .AQITable .AQITableBox .AQIlegend {
+  display: flex;
+  justify-content: center;
+}
+main .article .AQITable .AQITableBox .AQIlegend .indexName {
+  font-family: "Noto Sans TC", "Roboto", sans-serif;
+  display: block;
+  padding-top: 20px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 1rem;
+  color: #000;
+}
+main .article .AQITable .AQITableBox .AQIlegend .indexRange {
+  font-family: "Noto Sans TC", "Roboto", sans-serif;
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  font-size: 1rem;
+  color: #000;
+}
+main .article .AQITable .AQITableBox .AQIlegend .bor-top-green {
+  width: 100%;
+  margin: 2px;
+  border-top: 0.5rem solid #009865;
+  background-color: #e5f4ef;
+}
+main .article .AQITable .AQITableBox .AQIlegend .bor-top-yellow {
+  width: 100%;
+  margin: 2px;
+  border-top: 0.5rem solid #fffb26;
+  background-color: #ffffea;
+}
+main .article .AQITable .AQITableBox .AQIlegend .bor-top-orange {
+  width: 100%;
+  margin: 2px;
+  border-top: 0.5rem solid #ff9734;
+  background-color: #fef4ea;
+}
+main .article .AQITable .AQITableBox .AQIlegend .bor-top-red {
+  width: 100%;
+  margin: 2px;
+  border-top: 0.5rem solid #ca0034;
+  background-color: #fae5ea;
+}
+main .article .AQITable .AQITableBox .AQIlegend .bor-top-purple {
+  width: 100%;
+  margin: 2px;
+  border-top: 0.5rem solid #670099;
+  background-color: #f0e5f5;
+}
+main .article .AQITable .AQITableBox .AQIlegend .bor-top-brown {
+  width: 100%;
+  margin: 2px;
+  border-top: 0.5rem solid #7e0123;
+  background-color: #f1e5e9;
+}
+
+footer {
+  width: 100%;
+  height: 104px;
+  background-color: #f0f5f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+footer .foot {
+  color: #189ad3;
+  font-family: "Noto Sans TC", "Roboto", sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+}
+footer .foot span {
+  padding: 2px;
+  font-family: "Noto Sans TC", "Roboto", sans-serif;
+}
+
+@media (max-width: 1200px) {
+  header .head {
+    width: 95%;
+  }
+  header .head .right .item {
+    display: none;
+  }
+  header .head .right .mobile-menu {
+    display: block;
+  }
+  section .bread-bg .bread {
+    width: 90%;
+  }
+  main .dataHead .dataTitle {
+    width: 90%;
+  }
+  main .lineContainer .line {
+    width: 90%;
+  }
+  main .Map .clearFix {
+    width: 90%;
+    display: block;
+  }
+  main .Map .clearFix .inputField {
+    margin: 20px 5px;
+    width: calc(50% - 1rem);
+  }
+  main .Map .clearFix .inputField select {
+    width: 100%;
+  }
+  main .Map .clearFix .inputFieldFix {
+    justify-content: center;
+    margin: 10px 0px;
+  }
+  main .article .station .stationTitle {
+    width: 90%;
+  }
+  main .article .AQTitle h4 {
+    width: 90%;
+  }
+  main .article .AQBoxs .AQIFlex .AQI {
+    width: 90%;
+  }
+  main .article .AQBoxs .AQIFlex .AQI .AQIbox .AQIcondition {
+    right: 20%;
+  }
+  main .article .AQBoxs .clearfix .clearfixBox {
+    width: 90%;
+  }
+  main .article .AQBoxs .clearfix .clearfixBox .AQBox {
+    width: calc(40% - 1rem);
+  }
+  main .article .AQBoxs .clearfix .clearfixBox .Empty {
+    display: none;
+  }
+  main .article .AQITable .AQITableBox {
+    width: 90%;
+  }
+}
+@media (max-width: 600px) {
+  main .Map .clearFix .inputField {
+    margin: 10px 5px;
+    width: 100%;
+  }
+  main .article .AQBoxs .AQIFlex .AQI {
+    width: 90%;
+  }
+  main .article .AQBoxs .AQIFlex .AQI .AQIbox .AQIcondition {
+    right: 25%;
+  }
+  main .article .AQBoxs .clearfix .clearfixBox .AQBox {
+    width: 100%;
+  }
+}/*# sourceMappingURL=all.css.map */
