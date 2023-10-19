@@ -23,7 +23,6 @@ scheduler.init_app(app)
 def aqi_daily():
     current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     pre_time = (datetime.now() - timedelta(hours=1)).strftime("%Y-%m-%d %H:%M:%S")
-    # pre_time = pre_time.strftime("%Y-%m-%d %H:%M:%S")
     response = requests.get(
         url=f"{gov_url}&filters=status,EQ,對敏感族群不健康,對所有族群不健康,非常不健康,危害"
         f"|datacreationdate,GT,{pre_time}|datacreationdate,LE,{current_time}"
@@ -48,40 +47,68 @@ def dc_post(data):
         info_list.append(info)
 
     for i in info_list:
-        current_time = datetime.now().strftime("%A,%Y-%m-%d %H:%M:%S")
+        current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        match i.get("status"):
+            case "對敏感族群不健康":
+                color_number = 16744192
+            case "對所有族群不健康":
+                color_number = 16720896
+            case "非常不健康":
+                color_number = 8388736
+            case "危害":
+                color_number = 9849600
         body = {
             "username": "空氣品質發佈機器人",
-            "content": f"{current_time}\n{i.get('county')}{i.get('sitename')}地區的空氣品質報告",
             "avatar_url": "https://leo145x.github.io/icon/robot.png",
-            "embeds": [{
-                "title":"AQI Notify",
-                "fields": [
-                    {
-                        "name":"空氣品質狀態",
-                        "value":f"{i.get('status')}",
+            "embeds": [
+                {
+                    "author":{
+                        "name" : "Push Robot",
+                        "url" : "https://leo145x.github.io/icon/robot.png",
+                        "icon_url" : "https://leo145x.github.io/icon/robot.png",
                     },
-                    {
-                        "name":"pm 2.5",
-                        "value":f"{i.get('pm2.5')}",
-                        "inline":True
+                    "title": f"{i.get('county')}{i.get('sitename')}地區的空氣品質報告",
+                    "url" :"http://13.54.167.9:3000/index.html",
+                    "description": f"偵測時間: {current_time}",
+                    "color": color_number,
+                    "fields": [
+                        {
+                            "name": "空氣品質狀態",
+                            "value": f"{i.get('status')}"
+                        },
+                        {
+                            "name" : "空氣品質指標 (AQI)",
+                            "value" : f"{i.get('aqi')}",
+                            "inline" : True
+                        },
+                        {
+                            "name": "細懸浮微粒 PM 2.5",
+                            "value": f"{i.get('pm2.5')}",
+                            "inline": True
+                        },
+                        {
+                            "name": "懸浮微粒PM 10", 
+                            "value": f"{i.get('pm10')}",
+                            "inline": True
+                        },
+                        {
+                            "name" : "提醒",
+                            "value" : "此區域民眾出門建議配戴口罩 "
+                        }
+                    ],
+                    "image":{
+                        "url" : "https://leo145x.github.io/icon/cityAir.jpg"
                     },
-                    {
-                        "name":"pm 10",
-                        "value":f"{i.get('pm10')}",
-                        "inline":True
-                    }
-                ],
-                "footer":{
-                    "text": "感謝你的注意"
+                    "footer": {"text": "感謝你的注意"}
                 }
-            }]
+            ]
         }
         requests.post(url=dc_bot, json=body)
-        time.sleep(10)
+        time.sleep(5)
 
 
 
-@app.route("/api")
+@app.route("/api", method=["POST"])
 def api():
     data = request.get_json()
     data = data.get("data")
@@ -108,7 +135,7 @@ def api():
 
 
 
-@app.route("/")
+@app.route("/", method=["POST"])
 def index():
     north = [i for i in range(1, 28)] + [64, 65, 66, 67, 68, 70, 84, 311]
     central = [i for i in range(28, 39)] + [41, 69, 72, 83, 85, 201, 310]
