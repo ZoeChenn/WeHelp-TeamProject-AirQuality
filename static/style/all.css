@@ -191,13 +191,18 @@ main .article .station .stationTitle .site p {
   color: #666;
   font-family: "Noto Sans TC", "Roboto", sans-serif;
 }
-main .article .AQTitle {
+main .article .AQTitle .AQTitle2 {
   display: flex;
   justify-content: center;
 }
-main .article .AQTitle h4 {
+main .article .AQTitle .AQTitle2 .AQTitle3 {
   width: 1200px;
+  font-size: 16px;
+  font-weight: 600;
   font-family: "Noto Sans TC", "Roboto", sans-serif;
+}
+main .article .AQTitle .AQTitle2 .AQTitle3 .timeTitle #siteTime {
+  color: #666;
 }
 main .article .AQBoxs .AQIFlex {
   display: flex;
@@ -492,6 +497,9 @@ footer .foot span {
     width: 90%;
   }
   main .article .AQTitle h4 {
+    width: 90%;
+  }
+  main .article .AQTitle .AQTitle2 .AQTitle3 {
     width: 90%;
   }
   main .article .AQBoxs .AQIFlex .AQI {

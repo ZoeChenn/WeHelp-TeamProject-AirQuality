@@ -195,11 +195,20 @@ main{
             }
         }
         .AQTitle{
-            display: flex;
-            justify-content: center;
-            h4{
-                width: 1200px;
-                font-family: "Noto Sans TC", "Roboto", sans-serif;
+            .AQTitle2{
+                display: flex;
+                justify-content: center;
+                .AQTitle3{
+                    width: 1200px;
+                    font-size: 16px;
+                    font-weight: 600;
+                    font-family: "Noto Sans TC", "Roboto", sans-serif;
+                    .timeTitle{
+                        #siteTime{
+                            color: #666;
+                        }
+                    }
+                }
             }
         }
         .AQBoxs{ 
@@ -520,6 +529,13 @@ footer{
             .AQTitle{
                 h4{
                     width: 90%;
+                }
+            }
+            .AQTitle{
+                .AQTitle2{
+                    .AQTitle3{
+                        width: 90%;
+                    }
                 }
             }
             .AQBoxs{
