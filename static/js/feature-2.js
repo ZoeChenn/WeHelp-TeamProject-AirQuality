@@ -157,11 +157,10 @@ function settimeData(){
     }
 }
 /** 
- * 將list中的內容更新至畫面
+ * 將list中的area更新至畫面
  * @param {Object} list 下拉選單的資料
- * @param {Number} index 目前選中縣市在list中的index
  */
-function putListData(list){
+function putAreaData(list){
     // console.log(list);
     doms.area.innerHTML="";
     for(let i=0; i<list["area"].length; i++){
@@ -169,6 +168,12 @@ function putListData(list){
         option.textContent = list["area"][i];
         doms.area.appendChild(option);
     }
+}
+/** 
+ * 將list中的time更新至畫面
+ * @param {Object} list 下拉選單的資料
+ */
+function putTimeData(list){
     doms.time.innerHTML="";
     for(let i=0; i<list["time"].length; i++){
         let option = document.createElement("option");
@@ -176,6 +181,11 @@ function putListData(list){
         doms.time.appendChild(option);
     }
 }
+/** 
+ * 將list中的country更新至畫面
+ * @param {Object} list 下拉選單的資料
+ * @param {Number} area的index
+ */
 function putCountryData(list, index){
     doms.country.innerHTML="";
     for(let i=0; i<list["country"][index].length; i++){
@@ -184,6 +194,12 @@ function putCountryData(list, index){
         doms.country.appendChild(option);
     }
 }
+/** 
+ * 將list中的site更新至畫面
+ * @param {Object} list 下拉選單的資料
+ * @param {Number} area的index
+ * @param {Number} country的index
+ */
 function putSiteData(list, index1, index2){
     doms.site.innerHTML="";
     for(let i=0; i<list["site"][index1][index2].length; i++){
