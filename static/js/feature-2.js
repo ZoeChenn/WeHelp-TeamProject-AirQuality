@@ -157,10 +157,10 @@ function settimeData(){
     }
 }
 /** 
- * 將list中的area和time更新至畫面
+ * 將list中的area更新至畫面
  * @param {Object} list 下拉選單的資料
  */
-function putListData(list){
+function putAreaData(list){
     // console.log(list);
     doms.area.innerHTML="";
     for(let i=0; i<list["area"].length; i++){
@@ -168,6 +168,12 @@ function putListData(list){
         option.textContent = list["area"][i];
         doms.area.appendChild(option);
     }
+}
+/** 
+ * 將list中的time更新至畫面
+ * @param {Object} list 下拉選單的資料
+ */
+function putTimeData(list){
     doms.time.innerHTML="";
     for(let i=0; i<list["time"].length; i++){
         let option = document.createElement("option");

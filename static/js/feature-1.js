@@ -1,14 +1,15 @@
 settimeData();
-putListData(list);
+putAreaData(list);
 putCountryData(list, 0);
-putSiteData(list, 0, 0)
+putSiteData(list, 0, 0);
+putTimeData(list);
 
 const searchBtn = document.querySelector(".seachField");
 searchBtn.addEventListener("click", (event) => {
   event.preventDefault();
   fetchCardData();
   settimeData();
-  putListData(list);
+  putTimeData(list);
 });
 
 function fetchCardData(){
