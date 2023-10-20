@@ -47,7 +47,7 @@ def dc_post(data):
         info_list.append(info)
 
     for i in info_list:
-        current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        # current_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         match i.get("status"):
             case "對敏感族群不健康":
                 color_number = 16744192
@@ -69,7 +69,7 @@ def dc_post(data):
                     },
                     "title": f"{i.get('county')}{i.get('sitename')}地區的空氣品質報告",
                     "url" :"http://13.54.167.9:3000/index.html",
-                    "description": f"偵測時間: {current_time}",
+                    "description": f"偵測時間: {i.get('datacrateiondate')}",
                     "color": color_number,
                     "fields": [
                         {
