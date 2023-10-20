@@ -1,11 +1,15 @@
 settimeData();
-putListData(list);
+putAreaData(list);
 putCountryData(list, 0);
-putSiteData(list, 0, 0)
+putSiteData(list, 0, 0);
+putTimeData(list);
+
 const searchBtn = document.querySelector(".seachField");
 searchBtn.addEventListener("click", (event) => {
   event.preventDefault();
   fetchCardData();
+  settimeData();
+  putTimeData(list);
 });
 
 function fetchCardData(){
@@ -49,13 +53,15 @@ function fetchCardData(){
 window.addEventListener("load", function () {
   fetchCardData();
 });
+
 doms.area.addEventListener("change", (e)=>{
   let index = e.target.selectedIndex;
   putCountryData(list, index);
+  putSiteData(list, index, 0);
 })
 
 doms.country.addEventListener("change", (e) => {
   let index2 = e.target.selectedIndex;
   let index1 = doms.area.selectedIndex;
-  putSiteData(list, index1,index2);
+  putSiteData(list, index1, index2);
 });
