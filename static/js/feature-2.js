@@ -15,10 +15,9 @@ const doms={
         pm10: document.querySelector("#PM10"),
         o3: document.querySelector("#O3"),
         co: document.querySelector("#CO"),
-        nmhc: document.querySelector("#NMHC"),
         ws: document.querySelector("#WS_HR"),
         wd: document.querySelector("#WD_HR"),
-        rh: document.querySelector("#RH"),
+        date: document.querySelector("#siteTime"),
     },
     aqibox: document.querySelector(".AQIbox"),
     aqbox: document.querySelectorAll(".AQBox"),
@@ -148,20 +147,29 @@ function settimeData(){
 
     for(let i=0; i < 24; i++){
         time.setTime(now-3600000*i);
-        if(time.getMonth()+1<10){
-            list["time"][i] = time.getFullYear().toString() + "-" + "0" + (time.getMonth()+1).toString() + "-" + time.getDate().toString() + " " + time.getHours().toString() + ":00";
+        let month = time.getMonth()+1;
+        let monthStr;
+        let hour = time.getHours();
+        let hourStr;
+        if(month<10){
+            monthStr = "0" + month.toString();
+        }else{
+            monthStr = month.toString();
         }
-        else{
-            list["time"][i] = time.getFullYear().toString() + "-" + (time.getMonth()+1).toString() + "-" + time.getDate().toString() + " " + time.getHours().toString() + ":00";
+        if(hour<10){
+            hourStr = "0" + hour.toString();
+        }else{
+            hourStr = hour.toString();
         }
+        list["time"][i] = time.getFullYear().toString() + "-" + monthStr + "-" + time.getDate().toString() + " " + hourStr + ":00";
+
     }
 }
 /** 
- * 將list中的內容更新至畫面
+ * 將list中的area更新至畫面
  * @param {Object} list 下拉選單的資料
- * @param {Number} index 目前選中縣市在list中的index
  */
-function putListData(list){
+function putAreaData(list){
     // console.log(list);
     doms.area.innerHTML="";
     for(let i=0; i<list["area"].length; i++){
@@ -169,6 +177,12 @@ function putListData(list){
         option.textContent = list["area"][i];
         doms.area.appendChild(option);
     }
+}
+/** 
+ * 將list中的time更新至畫面
+ * @param {Object} list 下拉選單的資料
+ */
+function putTimeData(list){
     doms.time.innerHTML="";
     for(let i=0; i<list["time"].length; i++){
         let option = document.createElement("option");
@@ -176,6 +190,11 @@ function putListData(list){
         doms.time.appendChild(option);
     }
 }
+/** 
+ * 將list中的country更新至畫面
+ * @param {Object} list 下拉選單的資料
+ * @param {Number} area的index
+ */
 function putCountryData(list, index){
     doms.country.innerHTML="";
     for(let i=0; i<list["country"][index].length; i++){
@@ -184,6 +203,12 @@ function putCountryData(list, index){
         doms.country.appendChild(option);
     }
 }
+/** 
+ * 將list中的site更新至畫面
+ * @param {Object} list 下拉選單的資料
+ * @param {Number} area的index
+ * @param {Number} country的index
+ */
 function putSiteData(list, index1, index2){
     doms.site.innerHTML="";
     for(let i=0; i<list["site"][index1][index2].length; i++){
@@ -220,26 +245,48 @@ function setCardColor( type, element, box_class){
  * @param {Object} jsondata 後端傳送的json物件
  */
 function setCardData(jsondata) {
-    data={
-        site: jsondata["sitename"],
-        pollutant: "指標污染物 : " + jsondata["pollutant"],
-        aqicondition: jsondata["status"],
-        aqi: jsondata["aqi"], 
-        avpm25: jsondata["pm2.5_avg"],
-        avpm10: jsondata["pm10_avg"],
-        avo3: jsondata["o3_8hr"],
-        avco: jsondata["co_8hr"],
-        so2: jsondata["so2"],
-        no2: jsondata["no2"],
-        pm25: jsondata["pm2.5"],
-        pm10: jsondata["pm10"],
-        o3: jsondata["o3"],
-        co: jsondata["co"],
-        nmhc: null,
-        ws: jsondata["windspeed"],
-        wd: jsondata["winddirec"],
-        rh: null,
-    };
+    if(jsondata===undefined){
+        data={
+            site: doms.site.options[doms.site.selectedIndex].value,
+            pollutant: "指標污染物 : ",
+            aqicondition: "",
+            aqi: "尚未更新", 
+            avpm25: "",
+            avpm10: "",
+            avo3: "",
+            avco: "",
+            so2: "",
+            no2: "",
+            pm25: "",
+            pm10: "",
+            o3: "",
+            co: "",
+            ws: "",
+            wd: "",
+            date: doms.time.options[doms.time.selectedIndex].value,
+        };
+    }
+    else{
+        data={
+            site: jsondata["sitename"],
+            pollutant: "指標污染物 : " + jsondata["pollutant"],
+            aqicondition: jsondata["status"],
+            aqi: jsondata["aqi"], 
+            avpm25: jsondata["pm2.5_avg"],
+            avpm10: jsondata["pm10_avg"],
+            avo3: jsondata["o3_8hr"],
+            avco: jsondata["co_8hr"],
+            so2: jsondata["so2"],
+            no2: jsondata["no2"],
+            pm25: jsondata["pm2.5"],
+            pm10: jsondata["pm10"],
+            o3: jsondata["o3"],
+            co: jsondata["co"],
+            ws: jsondata["windspeed"],
+            wd: jsondata["winddirec"],
+            date: jsondata["datacreationdate"],
+        };
+    }
     //console.log(data);
     setCardColor( "aqi", doms.aqibox, "AQIbox");
     setCardColor( "avpm25", doms.aqbox[0], "AQBox");
@@ -255,7 +302,12 @@ function setCardData(jsondata) {
  */
 function putCardData(data){
     for(let key in data){
-        doms.data[key].textContent = data[key];
+        if(data[key]==""){
+            doms.data[key].textContent = "-"
+        }
+        else{
+            doms.data[key].textContent = data[key];
+        }
     }
 }
 // 測試用
