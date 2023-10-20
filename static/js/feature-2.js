@@ -147,12 +147,22 @@ function settimeData(){
 
     for(let i=0; i < 24; i++){
         time.setTime(now-3600000*i);
-        if(time.getMonth()+1<10){
-            list["time"][i] = time.getFullYear().toString() + "-" + "0" + (time.getMonth()+1).toString() + "-" + time.getDate().toString() + " " + time.getHours().toString() + ":00";
+        let month = time.getMonth()+1;
+        let monthStr;
+        let hour = time.getHours();
+        let hourStr;
+        if(month<10){
+            monthStr = "0" + month.toString();
+        }else{
+            monthStr = month.toString();
         }
-        else{
-            list["time"][i] = time.getFullYear().toString() + "-" + (time.getMonth()+1).toString() + "-" + time.getDate().toString() + " " + time.getHours().toString() + ":00";
+        if(hour<10){
+            hourStr = "0" + hour.toString();
+        }else{
+            hourStr = hour.toString();
         }
+        list["time"][i] = time.getFullYear().toString() + "-" + monthStr + "-" + time.getDate().toString() + " " + hourStr + ":00";
+
     }
 }
 /** 
