@@ -7,6 +7,8 @@ const searchBtn = document.querySelector(".seachField");
 searchBtn.addEventListener("click", (event) => {
   event.preventDefault();
   fetchCardData();
+  settimeData();
+  putListData(list);
 });
 
 function fetchCardData(){
