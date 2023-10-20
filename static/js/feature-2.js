@@ -15,10 +15,9 @@ const doms={
         pm10: document.querySelector("#PM10"),
         o3: document.querySelector("#O3"),
         co: document.querySelector("#CO"),
-        nmhc: document.querySelector("#NMHC"),
         ws: document.querySelector("#WS_HR"),
         wd: document.querySelector("#WD_HR"),
-        rh: document.querySelector("#RH"),
+        date: document.querySelector("#siteTime"),
     },
     aqibox: document.querySelector(".AQIbox"),
     aqbox: document.querySelectorAll(".AQBox"),
@@ -251,10 +250,9 @@ function setCardData(jsondata) {
         pm10: jsondata["pm10"],
         o3: jsondata["o3"],
         co: jsondata["co"],
-        nmhc: null,
         ws: jsondata["windspeed"],
         wd: jsondata["winddirec"],
-        rh: null,
+        date: jsondata["datacreationdate"],
     };
     //console.log(data);
     setCardColor( "aqi", doms.aqibox, "AQIbox");
@@ -271,7 +269,12 @@ function setCardData(jsondata) {
  */
 function putCardData(data){
     for(let key in data){
-        doms.data[key].textContent = data[key];
+        if(data[key]==""){
+            doms.data[key].textContent = "-"
+        }
+        else{
+            doms.data[key].textContent = data[key];
+        }
     }
 }
 // 測試用
