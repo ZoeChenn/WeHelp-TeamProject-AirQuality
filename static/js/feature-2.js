@@ -245,25 +245,48 @@ function setCardColor( type, element, box_class){
  * @param {Object} jsondata 後端傳送的json物件
  */
 function setCardData(jsondata) {
-    data={
-        site: jsondata["sitename"],
-        pollutant: "指標污染物 : " + jsondata["pollutant"],
-        aqicondition: jsondata["status"],
-        aqi: jsondata["aqi"], 
-        avpm25: jsondata["pm2.5_avg"],
-        avpm10: jsondata["pm10_avg"],
-        avo3: jsondata["o3_8hr"],
-        avco: jsondata["co_8hr"],
-        so2: jsondata["so2"],
-        no2: jsondata["no2"],
-        pm25: jsondata["pm2.5"],
-        pm10: jsondata["pm10"],
-        o3: jsondata["o3"],
-        co: jsondata["co"],
-        ws: jsondata["windspeed"],
-        wd: jsondata["winddirec"],
-        date: jsondata["datacreationdate"],
-    };
+    if(jsondata===undefined){
+        data={
+            site: doms.site.options[doms.site.selectedIndex].value,
+            pollutant: "指標污染物 : ",
+            aqicondition: "",
+            aqi: "尚未更新", 
+            avpm25: "",
+            avpm10: "",
+            avo3: "",
+            avco: "",
+            so2: "",
+            no2: "",
+            pm25: "",
+            pm10: "",
+            o3: "",
+            co: "",
+            ws: "",
+            wd: "",
+            date: doms.time.options[doms.time.selectedIndex].value,
+        };
+    }
+    else{
+        data={
+            site: jsondata["sitename"],
+            pollutant: "指標污染物 : " + jsondata["pollutant"],
+            aqicondition: jsondata["status"],
+            aqi: jsondata["aqi"], 
+            avpm25: jsondata["pm2.5_avg"],
+            avpm10: jsondata["pm10_avg"],
+            avo3: jsondata["o3_8hr"],
+            avco: jsondata["co_8hr"],
+            so2: jsondata["so2"],
+            no2: jsondata["no2"],
+            pm25: jsondata["pm2.5"],
+            pm10: jsondata["pm10"],
+            o3: jsondata["o3"],
+            co: jsondata["co"],
+            ws: jsondata["windspeed"],
+            wd: jsondata["winddirec"],
+            date: jsondata["datacreationdate"],
+        };
+    }
     //console.log(data);
     setCardColor( "aqi", doms.aqibox, "AQIbox");
     setCardColor( "avpm25", doms.aqbox[0], "AQBox");
